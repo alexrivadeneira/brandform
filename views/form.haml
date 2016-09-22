@@ -26,13 +26,13 @@
 		%h3 Which landing page widgets do you want?
 		.form-group
 			.form-check
-				%input.form-check-input{:type => "checkbox"}
+				%input.form-check-input{:type => "checkbox", :onclick => "toggleView('carousel-slide1')"}
 				%label.form-check-label Hero/Carousel
 					
 						
 
 		.container
-			.col-md-6
+			.col-md-6#carousel-slide1
 				.form-group
 					%h4 Carousel slide 1:
 					%label Upload image (1300 x 700px image)

@@ -3,7 +3,23 @@
 	%head
 		%link(rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css")
 		%link(rel="stylesheet" href="css/styles.css")
-		%title Why aint my title working
+		%title IdeaScale Community Custom Branding Form
 	%body
+
 		.container
 			=yield
+
+		:javascript
+
+			function toggleView(id){
+				var targetDiv = document.getElementById(id);
+				console.log(targetDiv);
+
+				if(targetDiv.style.display == "block"){
+					console.log("got here");
+					targetDiv.style.display = "none";
+				} else {
+					console.log("or there");
+					targetDiv.style.display = "block";
+				}
+			}
