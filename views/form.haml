@@ -62,6 +62,53 @@
 					%small.form-text.text-muted Link (url) for slide button 2
 
 
+				.form-group
+					.form-check
+					%input.form-check-input{:type => "checkbox",  :onclick => "toggleView('carousel-slide2')"} 
+					%label.form-check-label Add another slide	
+
+
+
+
+		.container
+			.col-md-6#carousel-slide2
+				.form-group
+					%h4 Carousel slide 2:
+					%label Upload image (1300 x 700px image)
+					%input.form-control-file{:type => "file", :name => "carousel-slide2-bg"}
+					%small.form-text.text-muted Consider a 1300 x 700 pixel image that is not so busy or bright that it will make any text you choose to place on your slide illegible.
+
+				%h4 Complete for each of the two possible buttons you want.  If you want no buttons, leave both blank.  If you want one button, fill out the form for one of the buttons:
+
+				.form-group
+					%label Button one text
+					%input.form-control{:type => "text", :name => "hero-slide2-button1-name"}
+					%small.form-text.text-muted Text for slide button 1
+
+				.form-group
+					%label Button one link
+					%input.form-control{:type => "text", :name => "hero-slide2-button1-url"}
+					%small.form-text.text-muted Link (url) for slide button 1
+
+				.form-group
+					%label Button two text
+					%input.form-control{:type => "text", :name => "hero-slide2-button2-name"}
+					%small.form-text.text-muted Text for slide button 2
+
+				.form-group
+					%label Button two link
+					%input.form-control{:type => "text", :name => "hero-slide2-button2-url"}
+					%small.form-text.text-muted Link (url) for slide button 2
+
+
+				.form-group
+					.form-check
+					%input.form-check-input{:type => "checkbox",  :onclick => "toggleView('carousel-slide2')"} 
+					%label.form-check-label Add another slide	
+
+
+
+
 		.form-group
 			.form-check
 			
@@ -144,8 +191,6 @@
 				%input.form-check-input{:type => "checkbox", :name => "footer"}
 
 
-		.form-group
-			%input{:type => "submit", :value => "Send", :class => "button"}
 
 
 		.container
@@ -469,4 +514,7 @@
 				%small.form-text.text-muted http (url) destination of your link
 				
 				%br
-				%br						
+				%br			
+
+		.form-group
+			%input{:type => "submit", :value => "Submit Form", :class => "button"}

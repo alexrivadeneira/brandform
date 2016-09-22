@@ -3,9 +3,6 @@
 	  transition: all 4s ease-in-out;
 }
 
-#carousel-slide1{
+#carousel-slide1, #carousel-slide2, #carousel-slide3, #carousel-slide4, #carousel-slide5{
 	display: none;
-
-
-
 }
