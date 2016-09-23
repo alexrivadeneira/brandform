@@ -1,520 +1,499 @@
-.row
-	%h1 IdeaScale Community Branding Selections
 
-	%form{ :action => "/submit", :method => "post"}
-		.form-group
-			%label Community Url
-			%input.form-control{:type => "text", :name => "community"}
-				%small.form-text.text-muted Eg: something.ideascale.com
-		
-		%h3 Colors
-		.form-group
-			%label Accent Color 1
-			%input.form-control{:type => "text", :name => "color-accent1"}
-				%small.form-text.text-muted Formatted like #d3d3d3 or #ffffff. Should contrast well with white.
+%h1 IdeaScale Community Branding Selections
 
-		.form-group
-			%label Accent Color 2
-			%input.form-control{:type => "text", :name => "color-accent2"}
-				%small.form-text.text-muted Formatted like #d3d3d3 or #ffffff. We recommend a slightly lighter version of accent color 1, above. Should contrast well with white.
+%form{ :action => "/submit", :method => "post"}
+	.form-group
+		%label Community Url
+		%input.form-control{:type => "text", :name => "community-url"}
+			%small.form-text.text-muted Eg: something.ideascale.com
+	
+	%h3 Colors
+	.form-group
+		%label Accent Color 1
+		%input.form-control{:type => "text", :name => "color-accent1"}
+			%small.form-text.text-muted Formatted like #d3d3d3 or #ffffff. Should contrast well with white.
 
-		.form-group
-			%label Highlight Color
-			%input.form-control{:type => "text", :name => "color-highlight"}
-				%small.form-text.text-muted Formatted like #d3d3d3 or #ffffff. Used to call attention to action items in the community. Should contrast well with white.
+	.form-group
+		%label Accent Color 2
+		%input.form-control{:type => "text", :name => "color-accent2"}
+			%small.form-text.text-muted Formatted like #d3d3d3 or #ffffff. We recommend a slightly lighter version of accent color 1, above. Should contrast well with white.
 
-		%h3 Which landing page widgets do you want?
-		.form-group
-			.form-check
-				%input.form-check-input{:type => "checkbox", :onclick => "toggleView('carousel-slide1')"}
-				%label.form-check-label Hero/Carousel
+	.form-group
+		%label Highlight Color
+		%input.form-control{:type => "text", :name => "color-highlight"}
+			%small.form-text.text-muted Formatted like #d3d3d3 or #ffffff. Used to call attention to action items in the community. Should contrast well with white.
+
+	%h3 Which landing page widgets do you want?
+	.form-group
+		.form-check
+			%input.form-check-input{:type => "checkbox", :onclick => "toggleView('hero-slide1')"}
+			%label.form-check-label Hero/Carousel
+				
 					
-						
 
-		.container
-			.col-md-6#carousel-slide1
-				.form-group
-					%h4 Carousel slide 1:
-					%label Upload image (1300 x 700px image)
-					%input.form-control-file{:type => "file", :name => "carousel-slide1-bg"}
-					%small.form-text.text-muted Consider a 1300 x 700 pixel image that is not so busy or bright that it will make any text you choose to place on your slide illegible.
+	.container
+		.col-md-6#hero-slide1
+			%h4 Carousel slide 1:
+			.form-group
+				%label Header line
+				%input.form-control{:type => "text", :name => "hero-slide1-header-line"}
+				%small.form-text.text-muted 25 characters (including spaces
 
-				%h4 Complete for each of the two possible buttons you want.  If you want no buttons, leave both blank.  If you want one button, fill out the form for one of the buttons:
-
-				.form-group
-					%label Button one text
-					%input.form-control{:type => "text", :name => "hero-slide1-button1-name"}
-					%small.form-text.text-muted Text for slide button 1
-
-				.form-group
-					%label Button one link
-					%input.form-control{:type => "text", :name => "hero-slide1-button1-url"}
-					%small.form-text.text-muted Link (url) for slide button 1
-
-				.form-group
-					%label Button two text
-					%input.form-control{:type => "text", :name => "hero-slide1-button2-name"}
-					%small.form-text.text-muted Text for slide button 2
-
-				.form-group
-					%label Button two link
-					%input.form-control{:type => "text", :name => "hero-slide1-button2-url"}
-					%small.form-text.text-muted Link (url) for slide button 2
-
-
-				.form-group
-					.form-check
-					%input.form-check-input{:type => "checkbox",  :onclick => "toggleView('carousel-slide2')"} 
-					%label.form-check-label Add another slide	
+			.form-group
+				%label Main paragraph of text 
+				%textarea.form-control{:rows => "5", :name => "hero-slide1-text-paragraph"}
+				%small.form-text.text-muted One description paragraph, up to 250 characters 
 
 
 
+			.form-group
+				%label Here slide 1 bg - 1300 x 700px
+				%label Upload the image to your global file library, and copy the url here:					
+				%input.form-control{:type => "text", :name => "hero-slide1-bg-url"}
+				%small.form-text.text-muted Consider a 1300 x 700 pixel image that is not so busy or bright that it will make any text you choose to place on your slide illegible.
 
-		.container
-			.col-md-6#carousel-slide2
-				.form-group
-					%h4 Carousel slide 2:
-					%label Upload image (1300 x 700px image)
-					%input.form-control-file{:type => "file", :name => "carousel-slide2-bg"}
-					%small.form-text.text-muted Consider a 1300 x 700 pixel image that is not so busy or bright that it will make any text you choose to place on your slide illegible.
+			%h4 Complete for each of the two possible buttons you want.  If you want no buttons, leave both blank.  If you want one button, fill out the form for one of the buttons:
 
-				%h4 Complete for each of the two possible buttons you want.  If you want no buttons, leave both blank.  If you want one button, fill out the form for one of the buttons:
+			.form-group
+				%label Button one text
+				%input.form-control{:type => "text", :name => "hero-slide1-button1-name"}
+				%small.form-text.text-muted Text for slide button 1
 
-				.form-group
-					%label Button one text
-					%input.form-control{:type => "text", :name => "hero-slide2-button1-name"}
-					%small.form-text.text-muted Text for slide button 1
+			.form-group
+				%label Button one link
+				%input.form-control{:type => "text", :name => "hero-slide1-button1-url"}
+				%small.form-text.text-muted Link (url) for slide button 1
 
-				.form-group
-					%label Button one link
-					%input.form-control{:type => "text", :name => "hero-slide2-button1-url"}
-					%small.form-text.text-muted Link (url) for slide button 1
+			.form-group
+				%label Button two text
+				%input.form-control{:type => "text", :name => "hero-slide1-button2-name"}
+				%small.form-text.text-muted Text for slide button 2
 
-				.form-group
-					%label Button two text
-					%input.form-control{:type => "text", :name => "hero-slide2-button2-name"}
-					%small.form-text.text-muted Text for slide button 2
+			.form-group
+				%label Button two link
+				%input.form-control{:type => "text", :name => "hero-slide1-button2-url"}
+				%small.form-text.text-muted Link (url) for slide button 2
 
-				.form-group
-					%label Button two link
-					%input.form-control{:type => "text", :name => "hero-slide2-button2-url"}
-					%small.form-text.text-muted Link (url) for slide button 2
-
-
-				.form-group
-					.form-check
-					%input.form-check-input{:type => "checkbox",  :onclick => "toggleView('carousel-slide2')"} 
-					%label.form-check-label Add another slide	
+				%hr
+			.form-group
+				.form-check
+				%input.form-check-input{:type => "checkbox",  :onclick => "toggleView('hero-slide2')"} 
+				%label.form-check-label Add another slide	
 
 
 
 
-		.form-group
-			.form-check
+
+
+
+
+
+	.form-group
+		.form-check
+		
+			%input.form-check-input{:type => "checkbox", :name => "welcome-area", :onclick => "toggleView('welcome-area')"} 
+			%label.form-check-label Welcome Area	
+
+	.container
+		.col-md-6#welcome-area
+			.form-group
+				%label Line of text under username
+				%input.form-control{:type => "text", :name => "welcome-area-text", :value => ""}
+				%small.form-text.text-muted One line of text: max 125 characters, including spaces.
+
+	.form-group
+		.form-check
+			%input.form-check-input{:type => "checkbox", :name => "active-campaigns"}
+			%label.form-check-label Active Campaigns
+
+	.form-group
+		.form-check
+			%input.form-check-input{:type => "checkbox", :name => "general-text", :onclick => "toggleView('general-text')"}
+			%label.form-check-label General Text Area
+
+
+	.container
+		.col-md-6#general-text
+			.form-group
+				%label Header line
+				%input.form-control{:type => "text", :name => "text-header-line"}
+				%small.form-text.text-muted One line of text: max 125 characters, including spaces.
+
+			.form-group
+				%label Main paragraph of text
+				%textarea.form-control{:rows => "5", :name => "text-paragraph"}
+
+			.form-group
+				%label Text justification/alignment for above ^:
+
+				%label.radio-inline Left
+				%input{:type => "radio", :name => "text-paragraph-just-left"}
+
+				%label.radio-inline Center
+				%input{:type => "radio", :name => "text-paragraph-just-center"}
+
+
+				%label.radio-inline Right
+				%input{:type => "radio", :name => "text-paragraph-just-right"}
+
+	.form-group
+		.form-check
+			%input.form-check-input{:type => "checkbox", :name => "pinned-ideas"}
+			%label.form-check-label Pinned Ideas
+
+	.form-group
+		.form-check
+			%input.form-check-input{:type => "checkbox", :name => "callout-ideas"}
+			%label.form-check-label Callout Ideas
+
+	.form-group
+		.form-check
+			%input.form-check-input{:type => "checkbox", :name => "tags"}
+			%label.form-check-label Tags
+
+	.form-group
+		.form-check
+			%input.form-check-input{:type => "checkbox", :name => "video", :onclick => "toggleView('video')"}
+			%label.form-check-label Video
+
+	.container
+		.col-md-6#video
+			.form-group
+				%label Video Url
+				%input.form-control{:type => "text", :name=> "video-url"}
+				%small.form-text.text-muted Enter the video url; eg: https://youtu.be/NugRZGDbPFU
+
+
+	.form-group
+		.form-check
+			%input.form-check-input{:type => "checkbox", :name => "footer", :onclick => "toggleView('footer')"}
+			%label.form-check-label Footer
+
+
+
+
+	.container#footer
+		%h3 Footer items - leave any blank you don't want.  Ie, if you want two centered columns, fill out only columns 2 and 3, leaving 1 and 4 blank.  Up to five links per col.  Please specify the link destination (url) and the name.
+
+		.col-md-2
+			%h3 Col 1
+			.form-group
+			%label Header title - col 1
+			%input.form-control{:type => "text", :name => "footer-col1-header"}
+			%small.form-text.text-muted Title of this link group
+
+			%br
+			%br
+
+
+			.form-group
+			%label Link 1 title
+			%input.form-control{:type => "text", :name => "footer-col1-item1-title"}
+			%small.form-text.text-muted Text for your link
+
+			.form-group
+			%label Link 1 url
+			%input.form-control{:type => "text", :name => "footer-col1-item1-url"}
+			%small.form-text.text-muted http (url) destination of your link
+
+			%br
+			%br
+
+
+			.form-group
+			%label Link 2 title
+			%input.form-control{:type => "text", :name => "footer-col1-item2-title"}
+			%small.form-text.text-muted Text for your link
+
+			.form-group
+			%label Link 2 url
+			%input.form-control{:type => "text", :name => "footer-col1-item2-url"}
+			%small.form-text.text-muted http (url) destination of your link
 			
-				%input.form-check-input{:type => "checkbox", :name => "welcome-area"} 
-				%label.form-check-label Welcome Area	
-
-		.container
-			.col-md-6
-				.form-group
-					%label Line of text under username
-					%input.form-control{:type => "text", :name => "welcome-area", :value => "With your input and consideration, we will grow"}
-					%small.form-text.text-muted One line of text: max 125 characters, including spaces.
-
-		.form-group
-			.form-check
-				%label.form-check-label Active Campaigns
-				%input.form-check-input{:type => "checkbox", :name => "active-campaigns"}
-
-		.form-group
-			.form-check
-				%label.form-check-label General Text Area
-				%input.form-check-input{:type => "checkbox", :name => "general-text"}
-
-
-		.container
-			.col-md-6
-				.form-group
-					%label Header line
-					%input.form-control{:type => "text", :name => "text-header-line"}
-					%small.form-text.text-muted One line of text: max 125 characters, including spaces.
-
-				.form-group
-					%label Main paragraph of text
-					%textarea.form-control{:rows => "5", :name => "text-paragraph"}
-
-				.form-group
-					%label Text justification/alignment for above ^:
-
-					%label.radio-inline Left
-					%input{:type => "radio", :name => "text-paragraph-just-left"}
-
-					%label.radio-inline Center
-					%input{:type => "radio", :name => "text-paragraph-just-center"}
-
-
-					%label.radio-inline Right
-					%input{:type => "radio", :name => "text-paragraph-just-right"}
-
-		.form-group
-			.form-check
-				%label.form-check-label Pinned Ideas
-				%input.form-check-input{:type => "checkbox", :name => "pinned-ideas"}
-
-		.form-group
-			.form-check
-				%label.form-check-label Callout Ideas
-				%input.form-check-input{:type => "checkbox", :name => "callout-ideas"}
-
-		.form-group
-			.form-check
-				%label.form-check-label Tags
-				%input.form-check-input{:type => "checkbox", :name => "tags"}
-
-		.form-group
-			.form-check
-				%label.form-check-label Video
-				%input.form-check-input{:type => "checkbox", :name => "video"}
-
-		.container
-			.col-md-6
-				.form-group
-					%label Video Url
-					%input.form-control{:type => "text", :name=> "video-url"}
-					%small.form-text.text-muted Enter the video url; eg: https://youtu.be/NugRZGDbPFU
-
-
-		.form-group
-			.form-check
-				%label.form-check-label Footer
-				%input.form-check-input{:type => "checkbox", :name => "footer"}
-
-
-
-
-		.container
-			%h3 Footer items - leave any blank you don't want.  Ie, if you want two centered columns, fill out only columns 2 and 3, leaving 1 and 4 blank.  Up to five links per col.  Please specify the link destination (url) and the name.
-
-			.col-md-2
-				%h3 Col 1
-				.form-group
-				%label Header title - col 1
-				%input.form-control{:type => "text", :name => "footer-col1-header"}
-				%small.form-text.text-muted Title of this link group
-
-				%br
-				%br
-
-
-				.form-group
-				%label Link 1 title
-				%input.form-control{:type => "text", :name => "footer-col1-item1-title"}
-				%small.form-text.text-muted Text for your link
-
-				.form-group
-				%label Link 1 url
-				%input.form-control{:type => "text", :name => "footer-col1-item1-url"}
-				%small.form-text.text-muted http (url) destination of your link
-
-				%br
-				%br
-
-
-				.form-group
-				%label Link 2 title
-				%input.form-control{:type => "text", :name => "footer-col1-item2-title"}
-				%small.form-text.text-muted Text for your link
-
-				.form-group
-				%label Link 2 url
-				%input.form-control{:type => "text", :name => "footer-col1-item2-url"}
-				%small.form-text.text-muted http (url) destination of your link
-				
-				%br
-				%br
-
-
-				.form-group
-				%label Link 3 title
-				%input.form-control{:type => "text", :name => "footer-col1-item3-title"}
-				%small.form-text.text-muted Text for your link
-
-				.form-group
-				%label Link 3 url
-				%input.form-control{:type => "text", :name => "footer-col1-item3-url"}
-				%small.form-text.text-muted http (url) destination of your link
-				
-				%br
-				%br
-
-
-				.form-group
-				%label Link 4 title
-				%input.form-control{:type => "text", :name => "footer-col1-item4-title"}
-				%small.form-text.text-muted Text for your link
-
-				.form-group
-				%label Link 4 url
-				%input.form-control{:type => "text", :name => "footer-col1-item4-url"}
-				%small.form-text.text-muted http (url) destination of your link
-				
-				%br
-				%br		
-
-
-				.form-group
-				%label Link 5 title
-				%input.form-control{:type => "text", :name => "footer-col1-item5-title"}
-				%small.form-text.text-muted Text for your link
-
-				.form-group
-				%label Link 5 url
-				%input.form-control{:type => "text", :name => "footer-col1-item5-url"}
-				%small.form-text.text-muted http (url) destination of your link
-				
-				%br
-				%br	
-
-			.col-md-2
-				%h3 Col 2
-				.form-group
-				%label Header title - col 1
-				%input.form-control{:type => "text", :name => "footer-col2-header"}
-				%small.form-text.text-muted Title of this link group
-
-				%br
-				%br
-
-
-				.form-group
-				%label Link 1 title
-				%input.form-control{:type => "text", :name => "footer-col2-item1-title"}
-				%small.form-text.text-muted Text for your link
-
-				.form-group
-				%label Link 1 url
-				%input.form-control{:type => "text", :name => "footer-col2-item1-url"}
-				%small.form-text.text-muted http (url) destination of your link
-
-				%br
-				%br
-
-
-				.form-group
-				%label Link 2 title
-				%input.form-control{:type => "text", :name => "footer-col2-item2-title"}
-				%small.form-text.text-muted Text for your link
-
-				.form-group
-				%label Link 2 url
-				%input.form-control{:type => "text", :name => "footer-col2-item2-url"}
-				%small.form-text.text-muted http (url) destination of your link
-				
-				%br
-				%br
-
-
-				.form-group
-				%label Link 3 title
-				%input.form-control{:type => "text", :name => "footer-col2-item3-title"}
-				%small.form-text.text-muted Text for your link
-
-				.form-group
-				%label Link 3 url
-				%input.form-control{:type => "text", :name => "footer-col2-item3-url"}
-				%small.form-text.text-muted http (url) destination of your link
-				
-				%br
-				%br
-
-
-				.form-group
-				%label Link 4 title
-				%input.form-control{:type => "text", :name => "footer-col2-item4-title"}
-				%small.form-text.text-muted Text for your link
-
-				.form-group
-				%label Link 4 url
-				%input.form-control{:type => "text", :name => "footer-col2-item4-url"}
-				%small.form-text.text-muted http (url) destination of your link
-				
-				%br
-				%br		
-
-
-				.form-group
-				%label Link 5 title
-				%input.form-control{:type => "text", :name => "footer-col2-item5-title"}
-				%small.form-text.text-muted Text for your link
-
-				.form-group
-				%label Link 5 url
-				%input.form-control{:type => "text", :name => "footer-col2-item5-url"}
-				%small.form-text.text-muted http (url) destination of your link
-				
-				%br
-				%br	
-
-			.col-md-2
-				%h3 Col 3
-				.form-group
-				%label Header title - col 1
-				%input.form-control{:type => "text", :name => "footer-col3-header"}
-				%small.form-text.text-muted Title of this link group
-
-				%br
-				%br
-
-
-				.form-group
-				%label Link 1 title
-				%input.form-control{:type => "text", :name => "footer-col3-item1-title"}
-				%small.form-text.text-muted Text for your link
-
-				.form-group
-				%label Link 1 url
-				%input.form-control{:type => "text", :name => "footer-col3-item1-url"}
-				%small.form-text.text-muted http (url) destination of your link
-
-				%br
-				%br
-
-
-				.form-group
-				%label Link 2 title
-				%input.form-control{:type => "text", :name => "footer-col3-item2-title"}
-				%small.form-text.text-muted Text for your link
-
-				.form-group
-				%label Link 2 url
-				%input.form-control{:type => "text", :name => "footer-col3-item2-url"}
-				%small.form-text.text-muted http (url) destination of your link
-				
-				%br
-				%br
-
-
-				.form-group
-				%label Link 3 title
-				%input.form-control{:type => "text", :name => "footer-col3-item3-title"}
-				%small.form-text.text-muted Text for your link
-
-				.form-group
-				%label Link 3 url
-				%input.form-control{:type => "text", :name => "footer-col3-item3-url"}
-				%small.form-text.text-muted http (url) destination of your link
-				
-				%br
-				%br
-
-
-				.form-group
-				%label Link 4 title
-				%input.form-control{:type => "text", :name => "footer-col3-item4-title"}
-				%small.form-text.text-muted Text for your link
-
-				.form-group
-				%label Link 4 url
-				%input.form-control{:type => "text", :name => "footer-col3-item4-url"}
-				%small.form-text.text-muted http (url) destination of your link
-				
-				%br
-				%br		
-
-
-				.form-group
-				%label Link 5 title
-				%input.form-control{:type => "text", :name => "footer-col3-item5-title"}
-				%small.form-text.text-muted Text for your link
-
-				.form-group
-				%label Link 5 url
-				%input.form-control{:type => "text", :name => "footer-col3-item5-url"}
-				%small.form-text.text-muted http (url) destination of your link
-				
-				%br
-				%br		
-
-			.col-md-2
-				%h3 Col 4
-				.form-group
-				%label Header title - col 1
-				%input.form-control{:type => "text", :name => "footer-col4-header"}
-				%small.form-text.text-muted Title of this link group
-
-				%br
-				%br
-
-
-				.form-group
-				%label Link 1 title
-				%input.form-control{:type => "text", :name => "footer-col4-item1-title"}
-				%small.form-text.text-muted Text for your link
-
-				.form-group
-				%label Link 1 url
-				%input.form-control{:type => "text", :name => "footer-col4-item1-url"}
-				%small.form-text.text-muted http (url) destination of your link
-
-				%br
-				%br
-
-
-				.form-group
-				%label Link 2 title
-				%input.form-control{:type => "text", :name => "footer-col4-item2-title"}
-				%small.form-text.text-muted Text for your link
-
-				.form-group
-				%label Link 2 url
-				%input.form-control{:type => "text", :name => "footer-col4-item2-url"}
-				%small.form-text.text-muted http (url) destination of your link
-				
-				%br
-				%br
-
-
-				.form-group
-				%label Link 3 title
-				%input.form-control{:type => "text", :name => "footer-col4-item3-title"}
-				%small.form-text.text-muted Text for your link
-
-				.form-group
-				%label Link 3 url
-				%input.form-control{:type => "text", :name => "footer-col4-item3-url"}
-				%small.form-text.text-muted http (url) destination of your link
-				
-				%br
-				%br
-
-
-				.form-group
-				%label Link 4 title
-				%input.form-control{:type => "text", :name => "footer-col4-item4-title"}
-				%small.form-text.text-muted Text for your link
-
-				.form-group
-				%label Link 4 url
-				%input.form-control{:type => "text", :name => "footer-col4-item4-url"}
-				%small.form-text.text-muted http (url) destination of your link
-				
-				%br
-				%br		
-
-
-				.form-group
-				%label Link 5 title
-				%input.form-control{:type => "text", :name => "footer-col4-item5-title"}
-				%small.form-text.text-muted Text for your link
-
-				.form-group
-				%label Link 5 url
-				%input.form-control{:type => "text", :name => "footer-col4-item5-url"}
-				%small.form-text.text-muted http (url) destination of your link
-				
-				%br
-				%br			
-
-		.form-group
-			%input{:type => "submit", :value => "Submit Form", :class => "button"}
+			%br
+			%br
+
+
+			.form-group
+			%label Link 3 title
+			%input.form-control{:type => "text", :name => "footer-col1-item3-title"}
+			%small.form-text.text-muted Text for your link
+
+			.form-group
+			%label Link 3 url
+			%input.form-control{:type => "text", :name => "footer-col1-item3-url"}
+			%small.form-text.text-muted http (url) destination of your link
+			
+			%br
+			%br
+
+
+			.form-group
+			%label Link 4 title
+			%input.form-control{:type => "text", :name => "footer-col1-item4-title"}
+			%small.form-text.text-muted Text for your link
+
+			.form-group
+			%label Link 4 url
+			%input.form-control{:type => "text", :name => "footer-col1-item4-url"}
+			%small.form-text.text-muted http (url) destination of your link
+			
+			%br
+			%br		
+
+
+			.form-group
+			%label Link 5 title
+			%input.form-control{:type => "text", :name => "footer-col1-item5-title"}
+			%small.form-text.text-muted Text for your link
+
+			.form-group
+			%label Link 5 url
+			%input.form-control{:type => "text", :name => "footer-col1-item5-url"}
+			%small.form-text.text-muted http (url) destination of your link
+			
+			%br
+			%br	
+
+		.col-md-2
+			%h3 Col 2
+			.form-group
+			%label Header title - col 1
+			%input.form-control{:type => "text", :name => "footer-col2-header"}
+			%small.form-text.text-muted Title of this link group
+
+			%br
+			%br
+
+
+			.form-group
+			%label Link 1 title
+			%input.form-control{:type => "text", :name => "footer-col2-item1-title"}
+			%small.form-text.text-muted Text for your link
+
+			.form-group
+			%label Link 1 url
+			%input.form-control{:type => "text", :name => "footer-col2-item1-url"}
+			%small.form-text.text-muted http (url) destination of your link
+
+			%br
+			%br
+
+
+			.form-group
+			%label Link 2 title
+			%input.form-control{:type => "text", :name => "footer-col2-item2-title"}
+			%small.form-text.text-muted Text for your link
+
+			.form-group
+			%label Link 2 url
+			%input.form-control{:type => "text", :name => "footer-col2-item2-url"}
+			%small.form-text.text-muted http (url) destination of your link
+			
+			%br
+			%br
+
+
+			.form-group
+			%label Link 3 title
+			%input.form-control{:type => "text", :name => "footer-col2-item3-title"}
+			%small.form-text.text-muted Text for your link
+
+			.form-group
+			%label Link 3 url
+			%input.form-control{:type => "text", :name => "footer-col2-item3-url"}
+			%small.form-text.text-muted http (url) destination of your link
+			
+			%br
+			%br
+
+
+			.form-group
+			%label Link 4 title
+			%input.form-control{:type => "text", :name => "footer-col2-item4-title"}
+			%small.form-text.text-muted Text for your link
+
+			.form-group
+			%label Link 4 url
+			%input.form-control{:type => "text", :name => "footer-col2-item4-url"}
+			%small.form-text.text-muted http (url) destination of your link
+			
+			%br
+			%br		
+
+
+			.form-group
+			%label Link 5 title
+			%input.form-control{:type => "text", :name => "footer-col2-item5-title"}
+			%small.form-text.text-muted Text for your link
+
+			.form-group
+			%label Link 5 url
+			%input.form-control{:type => "text", :name => "footer-col2-item5-url"}
+			%small.form-text.text-muted http (url) destination of your link
+			
+			%br
+			%br	
+
+		.col-md-2
+			%h3 Col 3
+			.form-group
+			%label Header title - col 1
+			%input.form-control{:type => "text", :name => "footer-col3-header"}
+			%small.form-text.text-muted Title of this link group
+
+			%br
+			%br
+
+
+			.form-group
+			%label Link 1 title
+			%input.form-control{:type => "text", :name => "footer-col3-item1-title"}
+			%small.form-text.text-muted Text for your link
+
+			.form-group
+			%label Link 1 url
+			%input.form-control{:type => "text", :name => "footer-col3-item1-url"}
+			%small.form-text.text-muted http (url) destination of your link
+
+			%br
+			%br
+
+
+			.form-group
+			%label Link 2 title
+			%input.form-control{:type => "text", :name => "footer-col3-item2-title"}
+			%small.form-text.text-muted Text for your link
+
+			.form-group
+			%label Link 2 url
+			%input.form-control{:type => "text", :name => "footer-col3-item2-url"}
+			%small.form-text.text-muted http (url) destination of your link
+			
+			%br
+			%br
+
+
+			.form-group
+			%label Link 3 title
+			%input.form-control{:type => "text", :name => "footer-col3-item3-title"}
+			%small.form-text.text-muted Text for your link
+
+			.form-group
+			%label Link 3 url
+			%input.form-control{:type => "text", :name => "footer-col3-item3-url"}
+			%small.form-text.text-muted http (url) destination of your link
+			
+			%br
+			%br
+
+
+			.form-group
+			%label Link 4 title
+			%input.form-control{:type => "text", :name => "footer-col3-item4-title"}
+			%small.form-text.text-muted Text for your link
+
+			.form-group
+			%label Link 4 url
+			%input.form-control{:type => "text", :name => "footer-col3-item4-url"}
+			%small.form-text.text-muted http (url) destination of your link
+			
+			%br
+			%br		
+
+
+			.form-group
+			%label Link 5 title
+			%input.form-control{:type => "text", :name => "footer-col3-item5-title"}
+			%small.form-text.text-muted Text for your link
+
+			.form-group
+			%label Link 5 url
+			%input.form-control{:type => "text", :name => "footer-col3-item5-url"}
+			%small.form-text.text-muted http (url) destination of your link
+			
+			%br
+			%br		
+
+		.col-md-2
+			%h3 Col 4
+			.form-group
+			%label Header title - col 1
+			%input.form-control{:type => "text", :name => "footer-col4-header"}
+			%small.form-text.text-muted Title of this link group
+
+			%br
+			%br
+
+
+			.form-group
+			%label Link 1 title
+			%input.form-control{:type => "text", :name => "footer-col4-item1-title"}
+			%small.form-text.text-muted Text for your link
+
+			.form-group
+			%label Link 1 url
+			%input.form-control{:type => "text", :name => "footer-col4-item1-url"}
+			%small.form-text.text-muted http (url) destination of your link
+
+			%br
+			%br
+
+
+			.form-group
+			%label Link 2 title
+			%input.form-control{:type => "text", :name => "footer-col4-item2-title"}
+			%small.form-text.text-muted Text for your link
+
+			.form-group
+			%label Link 2 url
+			%input.form-control{:type => "text", :name => "footer-col4-item2-url"}
+			%small.form-text.text-muted http (url) destination of your link
+			
+			%br
+			%br
+
+
+			.form-group
+			%label Link 3 title
+			%input.form-control{:type => "text", :name => "footer-col4-item3-title"}
+			%small.form-text.text-muted Text for your link
+
+			.form-group
+			%label Link 3 url
+			%input.form-control{:type => "text", :name => "footer-col4-item3-url"}
+			%small.form-text.text-muted http (url) destination of your link
+			
+			%br
+			%br
+
+
+			.form-group
+			%label Link 4 title
+			%input.form-control{:type => "text", :name => "footer-col4-item4-title"}
+			%small.form-text.text-muted Text for your link
+
+			.form-group
+			%label Link 4 url
+			%input.form-control{:type => "text", :name => "footer-col4-item4-url"}
+			%small.form-text.text-muted http (url) destination of your link
+			
+			%br
+			%br		
+
+
+			.form-group
+			%label Link 5 title
+			%input.form-control{:type => "text", :name => "footer-col4-item5-title"}
+			%small.form-text.text-muted Text for your link
+
+			.form-group
+			%label Link 5 url
+			%input.form-control{:type => "text", :name => "footer-col4-item5-url"}
+			%small.form-text.text-muted http (url) destination of your link
+			
+			%br
+			%br			
+
+	.form-group
+		%input{:type => "submit", :value => "Submit Form", :class => "button"}

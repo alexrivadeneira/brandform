@@ -7,10 +7,11 @@ require 'pry'
 require './models/model' 
 
 get '/' do
-	@model = Model.new(name: "Hi")
-	@model.save
+	# @model = Model.new(name: "Hi")
+	# @model.save
 	@models = Model.all
-  	erb :test
+ #  	erb :test
+ 	erb :alex
 end
 
 get '/contact' do
@@ -35,6 +36,7 @@ post '/submit' do
 	# 	"Sorry, there was an error!"
 	# end
 end
+
 
 
 

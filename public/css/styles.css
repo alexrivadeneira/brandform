@@ -3,6 +3,7 @@
 	  transition: all 4s ease-in-out;
 }
 
-#carousel-slide1, #carousel-slide2, #carousel-slide3, #carousel-slide4, #carousel-slide5{
+#hero-slide1, #hero-slide2, #hero-slide3, #hero-slide4, #hero-slide5, #welcome-area, #general-text, #video, #footer{
 	display: none;
 }
+
