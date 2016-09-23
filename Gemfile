@@ -15,3 +15,10 @@ gem "sinatra-activerecord"
 gem "pg"
 gem 'pry'
 
+group :development, :test do
+  gem 'sqlite3'
+end
+
+group :production do
+  gem 'pg'
+end
