@@ -3,7 +3,7 @@ source "https://rubygems.org"
 gem 'capistrano', '2.14.2'
 gem 'data_mapper', '1.2.0'
 gem 'dm-core', '1.2.0'
-gem 'dm-sqlite-adapter', '1.2.0'
+# gem 'dm-sqlite-adapter', '1.2.0'
 gem 'dm-timestamps', '1.2.0'
 gem 'haml', '3.1.7'
 gem 'sass', '3.2.1'
@@ -14,11 +14,3 @@ gem "activerecord"
 gem "sinatra-activerecord"
 gem "pg"
 gem 'pry'
-
-group :development, :test do
-  gem 'sqlite3'
-end
-
-group :production do
-  gem 'pg'
-end
