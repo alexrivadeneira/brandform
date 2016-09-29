@@ -7,19 +7,17 @@ require 'pry'
 require './models/model' 
 
 get '/' do
-	# @model = Model.new(name: "Hi")
-	# @model.save
-	@models = Model.all
- #  	erb :test
- 	erb :alex
+	haml :form
 end
 
-get '/contact' do
-	haml :contact
+get '/thanks' do
+	haml :thanks
 end	
 
-get '/form' do
-	haml :form
+get '/rivadeneira' do
+
+	@models = Model.all
+ 	erb :submissions
 end	
 
 post '/submit' do
@@ -29,7 +27,7 @@ post '/submit' do
 	@model = Model.new(name: params)
 	@model.save
 
-	redirect '/'
+	redirect '/thanks'
 	# if @model.save
 	# 	redirect '/'
 	# else
