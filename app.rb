@@ -28,13 +28,8 @@ post '/submit' do
 	@model.save
 
 	redirect '/thanks'
-	# if @model.save
-	# 	redirect '/'
-	# else
-	# 	"Sorry, there was an error!"
-	# end
-end
 
+end
 
 
 

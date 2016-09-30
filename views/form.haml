@@ -2,26 +2,31 @@
 %h1 IdeaScale Community Branding Selections
 
 %form{ :action => "/submit", :method => "post"}
+
+
 	.form-group
 		%label Community Url
 		%input.form-control{:type => "text", :name => "community-url"}
 			%small.form-text.text-muted Eg: something.ideascale.com
 	
 	%h3 Colors
-	.form-group
-		%label Accent Color 1
-		%input.form-control{:type => "text", :name => "color-accent1"}
-			%small.form-text.text-muted Formatted like #d3d3d3 or #ffffff. Should contrast well with white.
 
-	.form-group
-		%label Accent Color 2
-		%input.form-control{:type => "text", :name => "color-accent2"}
-			%small.form-text.text-muted Formatted like #d3d3d3 or #ffffff. We recommend a slightly lighter version of accent color 1, above. Should contrast well with white.
+	.container
+		.col-md-3
+			.form-group
+				%label Accent Color 1
+				%input.form-control{:type => "text", :name => "color-accent1"}
+					%small.form-text.text-muted Formatted like #d3d3d3 or #ffffff. Should contrast well with white.
 
-	.form-group
-		%label Highlight Color
-		%input.form-control{:type => "text", :name => "color-highlight"}
-			%small.form-text.text-muted Formatted like #d3d3d3 or #ffffff. Used to call attention to action items in the community. Should contrast well with white.
+			.form-group
+				%label Accent Color 2
+				%input.form-control{:type => "text", :name => "color-accent2"}
+					%small.form-text.text-muted Formatted like #d3d3d3 or #ffffff. We recommend a slightly lighter version of accent color 1, above. Should contrast well with white.
+
+			.form-group
+				%label Highlight Color
+				%input.form-control{:type => "text", :name => "color-highlight"}
+					%small.form-text.text-muted Formatted like #d3d3d3 or #ffffff. Used to call attention to action items in the community. Should contrast well with white.
 
 	%h3 Which landing page widgets do you want?
 	.form-group
@@ -37,20 +42,21 @@
 			.form-group
 				%label Header line
 				%input.form-control{:type => "text", :name => "hero-slide1-header-line"}
-				%small.form-text.text-muted 25 characters (including spaces
+				%small.form-text.text-muted max 25 characters (including spaces)
 
 			.form-group
 				%label Main paragraph of text 
 				%textarea.form-control{:rows => "5", :name => "hero-slide1-text-paragraph"}
-				%small.form-text.text-muted One description paragraph, up to 250 characters 
+				%small.form-text.text-muted One description paragraph, up to 250 characters (including spaces)
 
 
 
 			.form-group
-				%label Here slide 1 bg - 1300 x 700px
-				%label Upload the image to your global file library, and copy the url here:					
+				%label Hero slide background - 1300 x 700px
+				%label Upload the image to your global file library, and copy the url here (see image below).			
 				%input.form-control{:type => "text", :name => "hero-slide1-bg-url"}
 				%small.form-text.text-muted Consider a 1300 x 700 pixel image that is not so busy or bright that it will make any text you choose to place on your slide illegible.
+				%img.img-responsive{:src => "images/upload-img-url.png"}		
 
 			%h4 Complete for each of the two possible buttons you want.  If you want no buttons, leave both blank.  If you want one button, fill out the form for one of the buttons:
 
@@ -80,6 +86,103 @@
 				%input.form-check-input{:type => "checkbox",  :onclick => "toggleView('hero-slide2')"} 
 				%label.form-check-label Add another slide	
 
+
+	.container
+		.col-md-6#hero-slide2
+			%h4 Carousel slide 2:
+			.form-group
+				%label Header line
+				%input.form-control{:type => "text", :name => "hero-slide2-header-line"}
+				%small.form-text.text-muted max 25 characters (including spaces)
+
+			.form-group
+				%label Main paragraph of text 
+				%textarea.form-control{:rows => "5", :name => "hero-slide2-text-paragraph"}
+				%small.form-text.text-muted One description paragraph, up to 250 characters (including spaces)
+
+
+
+			.form-group
+				%label Hero slide background - 1300 x 700px
+				%label Upload the image to your global file library, and copy the url here (see image below).			
+				%input.form-control{:type => "text", :name => "hero-slide2-bg-url"}
+				%small.form-text.text-muted Consider a 1300 x 700 pixel image that is not so busy or bright that it will make any text you choose to place on your slide illegible.
+				%img.img-responsive{:src => "images/upload-img-url.png"}		
+
+			%h4 Complete for each of the two possible buttons you want.  If you want no buttons, leave both blank.  If you want one button, fill out the form for one of the buttons:
+
+			.form-group
+				%label Button one text
+				%input.form-control{:type => "text", :name => "hero-slide2-button1-name"}
+				%small.form-text.text-muted Text for slide button 1
+
+			.form-group
+				%label Button one link
+				%input.form-control{:type => "text", :name => "hero-slide2-button1-url"}
+				%small.form-text.text-muted Link (url) for slide button 1
+
+			.form-group
+				%label Button two text
+				%input.form-control{:type => "text", :name => "hero-slide2-button2-name"}
+				%small.form-text.text-muted Text for slide button 2
+
+			.form-group
+				%label Button two link
+				%input.form-control{:type => "text", :name => "hero-slide2-button2-url"}
+				%small.form-text.text-muted Link (url) for slide button 2
+
+				%hr
+			.form-group
+				.form-check
+				%input.form-check-input{:type => "checkbox",  :onclick => "toggleView('hero-slide3')"} 
+				%label.form-check-label Add another slide	
+
+
+	.container
+		.col-md-6#hero-slide3
+			%h4 Carousel slide 3:
+			.form-group
+				%label Header line
+				%input.form-control{:type => "text", :name => "hero-slide3-header-line"}
+				%small.form-text.text-muted max 25 characters (including spaces)
+
+			.form-group
+				%label Main paragraph of text 
+				%textarea.form-control{:rows => "5", :name => "hero-slide3-text-paragraph"}
+				%small.form-text.text-muted One description paragraph, up to 250 characters (including spaces)
+
+
+
+			.form-group
+				%label Hero slide background - 1300 x 700px
+				%label Upload the image to your global file library, and copy the url here (see image below).			
+				%input.form-control{:type => "text", :name => "hero-slide3-bg-url"}
+				%small.form-text.text-muted Consider a 1300 x 700 pixel image that is not so busy or bright that it will make any text you choose to place on your slide illegible.
+				%img.img-responsive{:src => "images/upload-img-url.png"}		
+
+			%h4 Complete for each of the two possible buttons you want.  If you want no buttons, leave both blank.  If you want one button, fill out the form for one of the buttons:
+
+			.form-group
+				%label Button one text
+				%input.form-control{:type => "text", :name => "hero-slide3-button1-name"}
+				%small.form-text.text-muted Text for slide button 1
+
+			.form-group
+				%label Button one link
+				%input.form-control{:type => "text", :name => "hero-slide3-button1-url"}
+				%small.form-text.text-muted Link (url) for slide button 1
+
+			.form-group
+				%label Button two text
+				%input.form-control{:type => "text", :name => "hero-slide3-button2-name"}
+				%small.form-text.text-muted Text for slide button 2
+
+			.form-group
+				%label Button two link
+				%input.form-control{:type => "text", :name => "hero-slide3-button2-url"}
+				%small.form-text.text-muted Link (url) for slide button 2
+
+				%hr
 
 
 
@@ -127,14 +230,14 @@
 				%label Text justification/alignment for above ^:
 
 				%label.radio-inline Left
-				%input{:type => "radio", :name => "text-paragraph-just-left"}
+				%input{:type => "radio", :name => "text-paragraph-just"}
 
 				%label.radio-inline Center
-				%input{:type => "radio", :name => "text-paragraph-just-center"}
+				%input{:type => "radio", :name => "text-paragraph-just"}
 
 
 				%label.radio-inline Right
-				%input{:type => "radio", :name => "text-paragraph-just-right"}
+				%input{:type => "radio", :name => "text-paragraph-just"}
 
 	.form-group
 		.form-check
