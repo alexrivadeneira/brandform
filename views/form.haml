@@ -31,7 +31,7 @@
 	%h3 Which landing page widgets do you want?
 	.form-group
 		.form-check
-			%input.form-check-input{:type => "checkbox", :onclick => "toggleView('hero-slide1')"}
+			%input.form-check-input{:type => "checkbox", :name => "hero-carousel", :onclick => "toggleView('hero-slide1')"}
 			%label.form-check-label Hero/Carousel
 				
 					
@@ -226,18 +226,7 @@
 				%label Main paragraph of text
 				%textarea.form-control{:rows => "5", :name => "text-paragraph"}
 
-			.form-group
-				%label Text justification/alignment for above ^:
 
-				%label.radio-inline Left
-				%input{:type => "radio", :name => "text-paragraph-just"}
-
-				%label.radio-inline Center
-				%input{:type => "radio", :name => "text-paragraph-just"}
-
-
-				%label.radio-inline Right
-				%input{:type => "radio", :name => "text-paragraph-just"}
 
 	.form-group
 		.form-check
@@ -263,7 +252,7 @@
 		.col-md-6#video
 			.form-group
 				%label Video Url
-				%input.form-control{:type => "text", :name=> "video-url"}
+				%input.form-control{:type => "text", :name => "video-url"}
 				%small.form-text.text-muted Enter the video url; eg: https://youtu.be/NugRZGDbPFU
 
 
