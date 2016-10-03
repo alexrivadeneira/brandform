@@ -528,9 +528,26 @@
 <!-- END footer -->
 <% end %>
 
+
+@brandColor: <%= selection.coloraccent1 %>;
+@brandColorRiff: <%= selection.coloraccent2 %>;
+@contrastColor: <%= selection.colorhighlight %>;
+
+.carousel-item-1{
+	background: url("<%= selection.heroslide1bgurl%>") @brandColor;
+}
+
+.carousel-item-2{
+	background: url("<%= selection.heroslide2bgurl%>") @brandColor;
+}
+
+.carousel-item-3{
+	background: url("<%= selection.heroslide3bgurl%>") @brandColor;
+}
 	<% @selectionCount += 1 %>
 
 	</div>
+
 
 <!-- ___________           .___         _____  .____                       .___.__                 __________                        
 \_   _____/ ____    __| _/   _____/ ____\ |    |   _____    ____    __| _/|__| ____    ____   \______   \_____     ____   ____  
