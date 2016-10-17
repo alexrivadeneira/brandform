@@ -17,11 +17,19 @@
 
 <h1>Selections</h1>
 
+
+
+
 <% @selectionCount = 0 %>
 
 <% @selections.each do |selection| %>
 
 	<div class='<% if @selectionCount % 2 == 0 %>greybg<% end %> container'>
+
+
+
+
+
 
 #set($api = $r.getAPI())
 #set($apiHelper = $api.getHelper())
@@ -49,11 +57,10 @@
     <div id="ideascale-navbar-collapse-1" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
 
-         <!--  <img class="cl-banner-img"  src="/community-library/accounts/91/916148/NIH-logo.jpg" alt="capital city"/>
+         <!--  <img class="cl-banner-img"  src="/community-library/accounts/91/916148/NIH-logo.jpg" alt="community logo"/>
     -->
 
-        <li><a href="#">Your Organization</a></li>
-        <li><a href="#">Welcome <span class="sr-only">(current)</span></a></li>
+        <li><a href="#"><strong>Welcome <span class="sr-only">(current)</strong></span></a></li>
         <li><a href="/a/home">Ideas</a></li>
         <!--<li class="dropdown">
           <a href="#" class="7" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
@@ -106,41 +113,45 @@
 <!-- END menu area -->
 
 
-
 <% if selection.herocarousel %>
+
 <!-- START hero-slider -->
 <section class="cl-section ">
 
     <div id="myCarousel"  data-interval="10000" class="carousel slide" data-ride="carousel">
 
-    
-<% if selection.heroslide2bgurl != "" %>
-      <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-  <% if selection.heroslide3bgurl != "" %>
-        <li data-target="#myCarousel" data-slide-to="2"></li>      
-  <% end %>
-      </ol> 
-<% end %>
+    <% if selection.heroslide2bgurl != "" %>   
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <% if selection.heroslide3bgurl != "" %>
+              <li data-target="#myCarousel" data-slide-to="2"></li>
+            <% end %>
+        </ol> 
+    <% end %> 
+
 
       <!-- Wrapper for slides -->
 
 
-      <div class="carousel-inner" role="listbox">
+      <div class="carousel-inner landing-pg-bg-accent-1" role="listbox">
 
-        <div class="item active carousel-item-1">
+
+
+        <div class="item active carousel-item-1 landing-pg-bg-accent-1">
           <div class="carousel-caption">
             <h1><%= selection.heroslide1headerline %></h1>
             <p><%= selection.heroslide1textparagraph %></p>
-  
-            <%if selection.heroslide1button1name != "" %>
-            	<a href="<%= selection.heroslide1button1url %>"><button type="submit" class="btn btn-default"><%=selection.heroslide1button1name %></button></a>
-            <% end %>
+    
 
-            <%if selection.heroslide1button2name != "" %>
-            	<a href="<%=selection.heroslide1button2url %>"><button type="submit" class="btn btn-default"><%= selection.heroslide1button2name %></button></a>
-            <%end %>
+          <% if selection.heroslide1button1name != "" %>
+            <a href="<%= selection.heroslide1button1url %>"><button type="submit" class="btn btn-info landing-pg-bg-highlight landing-pg-bc-highlight"><%= selection.heroslide1button1name %></button></a>
+          <% end %>
+
+
+          <% if selection.heroslide1button2name != "" %>
+            <a href="<%= selection.heroslide1button2url %>"><button type="submit" class="btn btn-info landing-pg-bg-highlight landing-pg-bc-highlight"><%= selection.heroslide1button2name %></button></a>
+          <% end %>
 
 
           </div>
@@ -148,63 +159,59 @@
 
 
 
-        <% if selection.heroslide2headerline %>
-	        <div class="item carousel-item-2">
-	          <div class="carousel-caption">
-	            <h1><%= selection.heroslide2headerline %></h1>
-	            <p><%= selection.heroslide2textparagraph %></p>
-	  
-	            <%if selection.heroslide2button1name != "" %>
-	            	<a href="<%= selection.heroslide2button1url %>"><button type="submit" class="btn btn-default"><%=selection.heroslide2button2name %></button></a>
-	            <% end %>
+      <% if selection.heroslide2bgurl != "" %>
+          <div class="item carousel-item-2 landing-pg-bg-accent-1">
+            <div class="carousel-caption">
+              <h1><%= selection.heroslide2headerline %></h1>
+              <p><%= selection.heroslide2textparagraph %></p>
+      
 
-	            <%if selection.heroslide2button2name != "" %>
-	            	<a href="<%=selection.heroslide2button2url %>"><button type="submit" class="btn btn-default"><%= selection.heroslide2button2name %></button></a>
-	            <%end %>
+            <% if selection.heroslide2button1name != "" %>
+              <a href="<%= selection.heroslide2button1url %>"><button type="submit" class="btn btn-info landing-pg-bg-highlight landing-pg-bc-highlight"><%= selection.heroslide2button1name %></button></a>
+            <% end %>
 
 
-	          </div>
-	        </div>
-        <% end %>
+            <% if selection.heroslide2button2name != "" %>
+              <a href="<%= selection.heroslide2button2url %>"><button type="submit" class="btn btn-info landing-pg-bg-highlight landing-pg-bc-highlight"><%= selection.heroslide2button2name %></button></a>
+            <% end %>
+
+            </div>
+          </div>
+      <% end %>
+
+
+      <% if selection.heroslide3bgurl != "" %>
+          <div class="item carousel-item-3 landing-pg-bg-accent-1">
+            <div class="carousel-caption">
+              <h1><%= selection.heroslide3headerline %></h1>
+              <p><%= selection.heroslide3textparagraph %></p>
+      
+
+            <% if selection.heroslide3button1name != "" %>
+              <a href="<%= selection.heroslide3button1url %>"><button type="submit" class="btn btn-info landing-pg-bg-highlight landing-pg-bc-highlight"><%= selection.heroslide3button1name %></button></a>
+            <% end %>
+
+
+            <% if selection.heroslide3button2name != "" %>
+              <a href="<%= selection.heroslide3button2url %>"><button type="submit" class="btn btn-info landing-pg-bg-highlight landing-pg-bc-highlight"><%= selection.heroslide3button2name %></button></a>
+            <% end %>
+
+            </div>
+          </div>
+      <% end %>
 
 
 
-        <% if selection.heroslide3headerline %>
-	        <div class="item carousel-item-2">
-	          <div class="carousel-caption">
-	            <h1><%= selection.heroslide3headerline %></h1>
-	            <p><%= selection.heroslide3textparagraph %></p>
-	  
-	            <%if selection.heroslide3button1name != "" %>
-	            	<a href="<%= selection.heroslide3button1url %>"><button type="submit" class="btn btn-default"><%=selection.heroslide3button1name %></button></a>
-	            <% end %>
-
-	            <%if selection.heroslide3button2name != "" %>
-	            	<a href="<%=selection.heroslide3button2url %>"><button type="submit" class="btn btn-default"><%= selection.heroslide3button2name %></button></a>
-	            <%end %>
-
-
-	          </div>
-	        </div>
-        <% end %>
-
-      <!-- Left and right controls -->
-      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
     </div>
 
 
 
 </section>
 <!-- END hero-slider -->
-
 <% end %>
+
+
+
 
 
 
@@ -217,14 +224,15 @@
 
 
 
+
 <% if selection.welcomearea %>
   <!-- START general text area -->
   <section class="cl-section cl-your-role">
-    <div class=" cl-row row" style="padding-bottom: 30px;">
+    <div class="cl-row row">
 
       #if($api.getCurrentMember())
 
-      <img class="cl-quote-avatar-top" src="$api.getCurrentMember().getAvatar()" alt="$api.getCurrentMember().getName()"/>
+      <img src="$api.getCurrentMember().getAvatar()" alt="$api.getCurrentMember().getName()"/>
 
       <h2>Welcome, $api.getCurrentMember().getName()</h2>
       #else
@@ -232,13 +240,13 @@
       #end
 
       <p class="text-center"><%= selection.welcomeareatext %></p>
-      <hr class="gradient" />
-
+      
+      <hr class="dark"/>
 
     </div>
   </section>
   <!-- END general text area -->
-<%end%>
+<% end %>
 
 
 
@@ -258,17 +266,19 @@
         <h2>Active Campaigns</h2>
 
           <p class="text-center">Browse our Active Campaigns</p>
-          <hr class="gradient" />
+          <hr class="dark"/>
 
 
           #foreach($campaign in $api.getActiveCampaigns())
           <a href="$campaign.getUrl()">
             <div class="col-md-4">
-              <div class="cl-campaign-logo-box"
+              <div
 
               #if($campaign.getLogo())
-                style="background: url('$campaign.getLogo()'); background-size: cover;"
+                style="background: url('$campaign.getLogo()') !important; background-size: cover;"
               #end
+
+               class="cl-campaign-logo-box landing-pg-bg-accent-1"
           >
                 <span class="cl-campaign-title">$textHelper.abbreviate($campaign.getName(), 100)</span>
               </div><!--cl-campaign-logo-box-->
@@ -301,14 +311,13 @@
 
 <% if selection.generaltext %>
   <!-- START general text area -->
-  <section class="cl-section cl-brand-bg">
+  <section class="cl-section">
 
       <div class="row cl-row">
 
       <div class="col-md-8 col-md-offset-2">
         <h2><%= selection.textheaderline %></h2>
         <p class="text-center"><%= selection.textparagraph %></p>
-
       </div>
     </div>
 
@@ -316,14 +325,6 @@
   <!-- END general text area -->  
 <% end %>
 
-
-
-
-
-
-<!-- divider -->
-<hr style="height:1px;border:none;color:#CCC;background-color:#CCC;" />
-<!-- divider -->
 
 
 <% if selection.pinnedideas %>
@@ -340,21 +341,21 @@
             <div class="row cl-row">
               <h2>Pinned Ideas</h2>
               <p class="text-center ">With your knowledge and participation, we are hoping to bring our service to the next level.</p>
-              <hr class="gradient" />
+              <hr class="dark"/>
               
 
               #foreach($idea in $api.getPinnedIdeas(4))
                 <div class="col-md-3 col-sm-6">
                   <div class="cl-idea-box #if($ideaCount % 2 == 0) cl-pin-rotate1 #else cl-pin-rotate2 #end">
-                    <span class="glyphicon glyphicon-pushpin cl-idea-center-pin cl-text-contrast"></span>
-                    <h3><a href="$idea.getUrl()">$textHelper.abbreviate($idea.getTitle(), 35)</a></h3>
+                    <span class="glyphicon glyphicon-pushpin cl-idea-center-pin landing-pg-fg-accent-1"></span>
+                    <h3><a href="$idea.getUrl()" class="landing-pg-fg-highlight">$textHelper.abbreviate($idea.getTitle(), 35)</a></h3>
                     #set($author = $idea.getAuthor())
                     <span class="cl-idea-author">$apiHelper.htmlEncode($author.getName())</span>
                     <p>$textHelper.abbreviate($idea.getDescription(), 150)</p>
-                    <span class="cl-idea-stats cl-text-contrast ">
+                    <span class="cl-idea-stats landing-pg-fg-accent-1">
                       <span class="is-icon is-icon-arrow-up cl-text-contrast" aria-hidden="true"></span>
                       <span class="sr-only">Net Votes:</span> $idea.getNetVotes() &nbsp;
-                      <span class="glyphicon glyphicon-comment" aria-hidden="true cl-text-contrast"></span>
+                      <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
                       <span class="sr-only">Number of Comments:</span> $idea.getCommentCount()
                     </span><!-- cl-idea-stats -->
                     </div>
@@ -364,36 +365,34 @@
         </section>
       #end
   <!-- END pinned ideas -->
-
 <% end %>
 
 
 
 
 
-<% if selection.calloutideas %>
 
+<% if selection.calloutideas %>
   <!-- START popular ideas callout style -->
-  <section class="cl-ideas cl-ideas-callout cl-background-bg">
+  <section class="cl-ideas cl-ideas-callout landing-pg-bg-accent-1 cl-white-fg">
  
       <div class="row cl-row">
-        <h2>Popular Ideas </h2>
+        <h2 >Popular Ideas </h2>
 
       <p class="text-center">The most popular ideas</p>
-      <hr class="gradient" />
-      <br />
-      <br />
+      <hr class="white" />
+
 
         #set($ideaCount = 0)
         #foreach($idea in $api.getIdeasByMode("top", 4))
         #set($ideaCount = $ideaCount + 1)
           <div class="col-md-3 col-sm-6">
             <div class="cl-idea-box cl-ideas-callout-style #if($ideaCount % 2 == 0) cl-ideas-callout-extra-margin #end">
-              <h3><a href="$idea.getUrl()">$textHelper.abbreviate($idea.getTitle(), 35)</a></h3>
+              <h3><a href="$idea.getUrl()" class="landing-pg-fg-highlight">$textHelper.abbreviate($idea.getTitle(), 35)</a></h3>
               #set($author = $idea.getAuthor())
               $apiHelper.htmlEncode($author.getName())
               <p>$textHelper.abbreviate($apiHelper.removeHtml($idea.getDescription()), 120))</p>
-              <span class="#if($ideaCount % 2 == 0) cl-idea-stats-callout-reverse #else cl-idea-stats-callout #end">
+              <span class="landing-pg-fg-accent-1 #if($ideaCount % 2 == 0) cl-idea-stats-callout-reverse #else cl-idea-stats-callout #end">
                 <span class="is-icon is-icon-arrow-up" aria-hidden="true"></span>
                 <span class="sr-only">Net Votes:</span> $idea.getNetVotes()
                 <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
@@ -409,8 +408,8 @@
 
   </section>
   <!-- END popular ideas callout style -->
-
 <% end %>
+
 
 
 <% if selection.tags %>
@@ -420,7 +419,7 @@
         <div class="col-md-8 col-md-offset-2">
               <h2>What We're Discussing</h2>
               <p class="text-center">Word cloud of most frequently used words</p>
-              <hr class="gradient" />
+              <hr class="dark"/>
               
           <p>#set($tags = $api.getTagsForTagCloud())
           #foreach($tag in $tags)
@@ -437,17 +436,21 @@
 
 <% if selection.video %>
   <!-- START general text area with video -->
-  <section class="cl-section cl-video-section  cl-video-bg ">
-    <div class="container cl-brand-translucent-overlay">
-      <div class="row cl-row">
+  <section class="cl-section cl-video-section landing-pg-bg-accent-1 cl-white-fg">
+    <div class="container">
+      <div class="row cl-row ">
         <div class="col-md-8 col-md-offset-2">
+          <h2>Where Good Ideas Come From</h2>
+          <p class="text-center">Get some inspiration from this video.</p>
+  
+        <h2 class="sr-only">WHERE GOOD IDEAS COME FROM</h2>
 
         <!-- small screen icon -->
         <a href="<%= selection.videourl %>" rel="nofollow"><span class="glyphicon glyphicon-play-circle" aria-hidden="true"></span></a>
-        <h2><a class="cl-play-video-text" href=" <%= selection.videourl %>" rel="nofollow">Play Innovation Video</a></h2>
+        <h2><a class="cl-play-video-text" href="<%= selection.videourl %>" rel="nofollow">Play Innovation Video</a></h2>
 
         <!-- large screen iframe video -->
-        <iframe width="100%" height="354" src="<%= selection.videourl %>" allowfullscreen ></iframe>
+        <iframe class="landing-pg-bc-accent-1" width="100%" height="354" src="<%= selection.videourl %>" allowfullscreen ></iframe>
         
       </div><!-- col-md-8 -->
      </div><!-- row cl-row -->
@@ -461,11 +464,11 @@
 </article>
 
 
+
 <% if selection.footer %>
 <!-- START footer -->
 <footer>
-<div class="cl-footer cl-brand-bg">
-
+<div class="cl-footer landing-pg-bg-accent-1 cl-white-fg">
 
   <section class="cl-section ">
 
@@ -530,22 +533,30 @@
 <% end %>
 
 
-@brandColor: <%= selection.coloraccent1 %>;
-@brandColorRiff: <%= selection.coloraccent2 %>;
-@contrastColor: <%= selection.colorhighlight %>;
 
-.carousel-item-1{
-	background: url("<%= selection.heroslide1bgurl%>") @brandColor;
+
+
+
+
+
+
+Accent 1: #<%= selection.coloraccent1 %> <br />
+Accent 2: #<%= selection.coloraccent2 %> <br />
+Highlight: #<%= selection.colorhighlight %> <br />
+
+.carousel-inner > .carousel-item-1{
+  background: url("<%= selection.heroslide1bgurl%>");
 }
 
-.carousel-item-2{
-	background: url("<%= selection.heroslide2bgurl%>") @brandColor;
+
+.carousel-inner > .carousel-item-2{
+  background: url("<%= selection.heroslide2bgurl%>");
 }
 
-.carousel-item-3{
-	background: url("<%= selection.heroslide3bgurl%>") @brandColor;
+.carousel-inner > .carousel-item-3{
+  background: url("<%= selection.heroslide3bgurl%>");
 }
-	<% @selectionCount += 1 %>
+
 
 	</div>
 
@@ -559,7 +570,11 @@
  -->
 	<hr />
 
-	<% end %>
+<% @selectionCount += 1 %>
+<% end %>
+
+
+
 
 
 </body>
