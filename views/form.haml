@@ -49,7 +49,7 @@
 			%h4 Carousel slide 1:
 			.form-group
 				%label Header line
-				%input.form-control{:type => "text", :name => "hero-slide1-header-line", :id => "heroslide1headerlineinput", :onblur => "showCharCount('heroslide1headerlineinput', 'heroslide1headerlineoutput', 25);"}
+				%input.form-control{:type => "text", :name => "hero-slide1-header-line", :id => "heroslide1headerlineinput", :onkeyup => "showCharCount('heroslide1headerlineinput', 'heroslide1headerlineoutput', 25);"}
 				%small.form-text.text-muted max 25 characters (including spaces)
 				%br
 				%br
@@ -60,9 +60,13 @@
 
 			.form-group
 				%label Main paragraph of text 
-				%textarea.form-control{:rows => "5", :name => "hero-slide1-text-paragraph"}
+				%textarea.form-control{:rows => "5", :name => "hero-slide1-text-paragraph", :id => "heroslide1textparagraphinput", :onkeyup => "showCharCount('heroslide1textparagraphinput', 'slide1textparagraphoutput', 250);"}
 				%small.form-text.text-muted One description paragraph, up to 250 characters (including spaces)
-
+				%br
+				%br
+				%alert#slide1textparagraphoutput
+				%br
+				%br
 
 
 			.form-group
@@ -106,14 +110,23 @@
 			%h4 Carousel slide 2:
 			.form-group
 				%label Header line
-				%input.form-control{:type => "text", :name => "hero-slide2-header-line"}
+				%input.form-control{:type => "text", :name => "hero-slide2-header-line", :id => "heroslide2headerlineinput", :onkeyup => "showCharCount('heroslide2headerlineinput', 'heroslide2headerlineoutput', 25);"}
 				%small.form-text.text-muted max 25 characters (including spaces)
+				%br
+				%br
+				%alert#heroslide2headerlineoutput
+				%br
+				%br
 
 			.form-group
 				%label Main paragraph of text 
-				%textarea.form-control{:rows => "5", :name => "hero-slide2-text-paragraph"}
+				%textarea.form-control{:rows => "5", :name => "hero-slide2-text-paragraph", :id => "heroslide2textparagraphinput", :onkeyup => "showCharCount('heroslide2textparagraphinput', 'heroslide2textparagraphoutput', 250);"}
 				%small.form-text.text-muted One description paragraph, up to 250 characters (including spaces)
-
+				%br
+				%br
+				%alert#heroslide2textparagraphoutput
+				%br
+				%br
 
 
 			.form-group
@@ -157,14 +170,23 @@
 			%h4 Carousel slide 3:
 			.form-group
 				%label Header line
-				%input.form-control{:type => "text", :name => "hero-slide3-header-line"}
+				%input.form-control{:type => "text", :name => "hero-slide3-header-line", :id => "heroslide3headerlineinput", :onkeyup => "showCharCount('heroslide3headerlineinput', 'heroslide3headerlineoutput', 25);"}
 				%small.form-text.text-muted max 25 characters (including spaces)
+				%br
+				%br
+				%alert#heroslide3headerlineoutput
+				%br
+				%br
 
 			.form-group
 				%label Main paragraph of text 
-				%textarea.form-control{:rows => "5", :name => "hero-slide3-text-paragraph"}
+				%textarea.form-control{:rows => "5", :name => "hero-slide3-text-paragraph", :id => "heroslide3textparagraphinput", :onkeyup => "showCharCount('heroslide3textparagraphinput', 'heroslide3textparagraphoutput', 250 );"}
 				%small.form-text.text-muted One description paragraph, up to 250 characters (including spaces)
-
+				%br
+				%br
+				%alert#heroslide3textparagraphoutput
+				%br
+				%br
 
 
 			.form-group
@@ -215,8 +237,13 @@
 		.col-md-6#welcome-area
 			.form-group
 				%label Line of text under username
-				%input.form-control{:type => "text", :name => "welcome-area-text", :value => ""}
+				%input.form-control{:type => "text", :name => "welcome-area-text", :value => "", :id => "welcomeareatextinput", :onkeyup => "showCharCount('welcomeareatextinput', 'welcomeareatextoutput', 125);"}
 				%small.form-text.text-muted One line of text: max 125 characters, including spaces.
+				%br
+				%br
+				%alert#welcomeareatextoutput
+				%br
+				%br
 
 	.form-group
 		.form-check
@@ -233,8 +260,13 @@
 		.col-md-6#general-text
 			.form-group
 				%label Header line
-				%input.form-control{:type => "text", :name => "text-header-line"}
+				%input.form-control{:type => "text", :name => "text-header-line", :id => "textheaderlineinput", :onkeyup => "showCharCount('textheaderlineinput', 'textheaderlineoutput', 125);"}
 				%small.form-text.text-muted One line of text: max 125 characters, including spaces.
+				%br
+				%br
+				%alert#textheaderlineoutput
+				%br
+				%br
 
 			.form-group
 				%label Main paragraph of text
