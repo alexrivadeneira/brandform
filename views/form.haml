@@ -49,8 +49,14 @@
 			%h4 Carousel slide 1:
 			.form-group
 				%label Header line
-				%input.form-control{:type => "text", :name => "hero-slide1-header-line"}
+				%input.form-control{:type => "text", :name => "hero-slide1-header-line", :id => "heroslide1headerlineinput", :onblur => "showCharCount('heroslide1headerlineinput', 'heroslide1headerlineoutput', 25);"}
 				%small.form-text.text-muted max 25 characters (including spaces)
+				%br
+				%br
+				%alert#heroslide1headerlineoutput
+				%br
+				%br
+
 
 			.form-group
 				%label Main paragraph of text 
@@ -597,3 +603,27 @@
 
 	.form-group
 		%input{:type => "submit", :value => "Submit Form", :class => "button"}
+
+
+	:javascript
+
+		function showCharCount(input, output, limit){
+			var input = document.getElementById(input).value;
+			var output = document.getElementById(output);
+
+			var charCount = 0;
+			for(var i = 0; i < input.length; i++){
+				charCount += 1;
+			}
+
+			output.innerHTML = charCount + " characters entered.";
+
+			if(charCount <= limit){
+				output.className = "";
+				output.className += "small form-text alert alert-success";
+			} else {
+				output.className = "";
+				output.className += "small form-text alert alert-danger";
+				output.innerHTML += " Limit is " + limit + " characters!"
+			}
+		}
