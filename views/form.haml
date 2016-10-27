@@ -1,7 +1,31 @@
 
 %h1 Community Branding Selections
 
-%h4.alert.danger The catalogue of selections is available <a href="https://ideascale.com/branding-guidelines" target="_blank">here</a>. 
+
+.well
+	%p This form explains the layout options for your new community’s custom landing page, and the inner community pages. We’ve provided you with a number of options for quickly and beautifully representing your brand, while simultaneously ensuring code maintainability and mobile-responsiveness across diverse screen sizes.
+
+	%p You can view some sample communities here to get an idea of the different layout possibilities:
+
+	%img.img-responsive{:src => "https://ideascale.com/wp-content/uploads/2016/07/examples.webp", :style => "max-height: 150px;", :alt => "sample communities"}
+
+	%br 
+
+	%ul
+		%li
+			%a{:href => "http://cv2test.ideascale.com", :target => "_blank"}Phoney Phones Inc
+		%li
+			%a{:href => "http://innolab.ideascale.com", :target => "_blank"}InnoLab
+		%li
+			%a{:href => "http://capitalcity.ideascale.com", :target => "_blank"}Capital City
+
+
+	%a{:href => "https://ideascale.com/community-custom-guidelines", :target => "_blank"}To read about general custom layout guidelines and tips, click here.
+
+	%p Otherwise, let's get started and get your selections!
+
+
+
 
 %form{ :action => "/submit", :method => "post"}
 
@@ -39,11 +63,23 @@
 	%h3 Which landing page widgets do you want?
 	.form-group
 		.form-check
-			%input.form-check-input{:type => "checkbox", :name => "hero-carousel", :onclick => "toggleView('hero-slide1')"}
-			%label.form-check-label Hero/Carousel
-				
-					
+			
+			.row	
+				.col-md-3
+					%input.form-check-input{:type => "checkbox", :name => "hero-carousel", :onclick => "toggleView('hero-slide1')"}
+					%label.form-check-label Hero/Carousel
 
+				.col-md-9
+					%img.img-responsive{:src => "https://ideascale.com/wp-content/uploads/2016/07/small-hero.webp"}
+					%p The hero or carousel is the first item on the custom landing page. You may choose up to three slide images and associated header, text and buttons for the hero.
+					%p If you don’t want the carousel functionality, you may choose a single image and a frozen slide or simple “hero” image and associated title text and buttons.
+					%p For each carousel slide, you may choose any combination of the following:
+					%ul
+						%li One title item, up to 25 characters (including spaces)
+						%li One description paragraph, up to 250 characters 
+						%li Up to two action buttons
+					%p In addition to choosing a responsive image, consider a 1300 x 700 pixel image that is not so busy or bright that it will make any text you choose to place on your slide illegible.					
+					
 	.container
 		.col-md-6#hero-slide1
 			%h4 Carousel slide 1:
@@ -229,9 +265,17 @@
 
 	.form-group
 		.form-check
-		
-			%input.form-check-input{:type => "checkbox", :name => "welcome-area", :onclick => "toggleView('welcome-area')"} 
-			%label.form-check-label Welcome Area	
+
+			.row
+				.col-md-3
+					%input.form-check-input{:type => "checkbox", :name => "welcome-area", :onclick => "toggleView('welcome-area')"} 
+					%label.form-check-label Welcome Area	
+
+				.col-md-9
+					%img.img-responsive{:src => "https://ideascale.com/wp-content/uploads/2016/07/welcome-area.webp", :style => "max-height: 110px;"}
+					%p Greet your users with this widget which displays the logged in username.
+					%p You can customize the line of text under the username.
+
 
 	.container
 		.col-md-6#welcome-area
@@ -246,14 +290,28 @@
 				%br
 
 	.form-group
-		.form-check
-			%input.form-check-input{:type => "checkbox", :name => "active-campaigns"}
-			%label.form-check-label Active Campaigns
+
+		.row
+			.col-md-3
+				.form-check
+					%input.form-check-input{:type => "checkbox", :name => "active-campaigns"}
+					%label.form-check-label Active Campaigns
+			.col-md-9
+				%img.img-responsive{:src => "https://ideascale.com/wp-content/uploads/2016/07/new_bg_active-campaigns.webp", :style => "max-width: 250px;"}			
+				%p If you’ve added campaign logos to your campaigns, then you might try this layout, which smartly displays the campaign title over a campaign logo. We recommend a darker, quiet campaign logo. Also, keep in mind that the image has to hold up against different responsive views. The campaign title is limited to 100 characters (including spaces), and the campaign description is limited to 360 characters of html-sanitized text, (including spaces).
+
 
 	.form-group
-		.form-check
-			%input.form-check-input{:type => "checkbox", :name => "general-text", :onclick => "toggleView('general-text')"}
-			%label.form-check-label General Text Area
+
+		.row
+			.col-md-3
+				.form-check
+					%input.form-check-input{:type => "checkbox", :name => "general-text", :onclick => "toggleView('general-text')"}
+					%label.form-check-label General Text Area
+			.col-md-9
+				%img.img-responsive{:src => "https://ideascale.com/wp-content/uploads/2016/07/general-text.webp", :style => "max-height: 70px;"}
+				%p White text on your first accent color.
+				%p You can select the text you’d like to appear here.
 
 
 	.container
@@ -276,23 +334,45 @@
 
 	.form-group
 		.form-check
-			%input.form-check-input{:type => "checkbox", :name => "pinned-ideas"}
-			%label.form-check-label Pinned Ideas
+			.row
+				.col-md-3
+					%input.form-check-input{:type => "checkbox", :name => "pinned-ideas"}
+					%label.form-check-label Pinned Ideas
+				.col-md-9
+					%img.img-responsive{:src => "https://ideascale.com/wp-content/uploads/2016/07/new_bg_pinned-ideas.webp", :style => "max-height: 150px;"}
 
 	.form-group
-		.form-check
-			%input.form-check-input{:type => "checkbox", :name => "callout-ideas"}
-			%label.form-check-label Callout Ideas
+		.row
+			.col-md-3	
+				.form-check
+					%input.form-check-input{:type => "checkbox", :name => "callout-ideas"}
+					%label.form-check-label Callout Ideas
+
+			.col-md-9
+				%img.img-responsive{:src => "https://ideascale.com/wp-content/uploads/2016/07/new_bg_popular-ideas.webp", :style => "max-height: 150px;"}
+				%p Another fun way to display ideas and increase engagement and highlight active users. Title limited to 35 characters (including spaces), and description to 120 characters (including spaces).
 
 	.form-group
-		.form-check
-			%input.form-check-input{:type => "checkbox", :name => "tags"}
-			%label.form-check-label Tags
+		.row
+			.col-md-3
+				.form-check
+					%input.form-check-input{:type => "checkbox", :name => "tags"}
+					%label.form-check-label Tags
+			.col-md-9
+				%img.img-responsive{:src => "https://ideascale.com/wp-content/uploads/2016/07/new_bg_tags.webp", :style => "max-height: 150px;"}
+				%p The tags widget uses a algorithm to create a word cloud of the most popular tags in your community. The boldest/largest/darkest words are the highest frequency tags, and the smallest/lightest words appear with least frequency. Clicking on a tag loads search results for for that tag on ideas in your community.
+
 
 	.form-group
-		.form-check
-			%input.form-check-input{:type => "checkbox", :name => "video", :onclick => "toggleView('video')"}
-			%label.form-check-label Video
+		.row
+			.col-md-3
+				.form-check
+					%input.form-check-input{:type => "checkbox", :name => "video", :onclick => "toggleView('video')"}
+					%label.form-check-label Video
+			.col-md-9
+				%img.img-responsive{:src => "https://ideascale.com/wp-content/uploads/2016/07/video.webp", :style => "max-height: 150px;"}
+				%p A video on your first accent color
+				%p Please upload your video to YouTube for easy embedding
 
 	.container
 		.col-md-6#video
@@ -303,9 +383,15 @@
 
 
 	.form-group
-		.form-check
-			%input.form-check-input{:type => "checkbox", :name => "footer", :onclick => "toggleView('footer')"}
-			%label.form-check-label Footer
+		.row
+			.col-md-3
+				.form-check
+					%input.form-check-input{:type => "checkbox", :name => "footer", :onclick => "toggleView('footer')"}
+					%label.form-check-label Footer
+			.col-md-9
+				%img.img-responsive{:src => "https://ideascale.com/wp-content/uploads/2016/07/footer.webp", :style => "max-height: 150px;"}
+				%p The footer provides four columns for you to provide categorized links
+				%p All of the links are customizable
 
 
 
@@ -634,7 +720,7 @@
 			%br			
 
 	.form-group
-		%input{:type => "submit", :value => "Submit Form", :class => "button"}
+		%input{:type => "submit", :value => "Submit Form", :class => "button btn"}
 
 
 	:javascript
