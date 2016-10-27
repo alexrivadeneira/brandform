@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160930224640) do
+ActiveRecord::Schema.define(version: 20161027175235) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "colors", force: :cascade do |t|
+    t.string "communityurl"
+    t.string "coloraccent1"
+    t.string "coloraccent2"
+    t.string "colorhighlight"
+  end
 
   create_table "models", force: :cascade do |t|
     t.string "name"

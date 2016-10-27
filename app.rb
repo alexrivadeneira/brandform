@@ -6,10 +6,17 @@ require './config/environments' #database configuration
 require 'pry'
 require './models/model' 
 require './models/selection' 
+require './models/color' 
+
 
 get '/' do
 	haml :form
 end
+
+get '/colorchoice' do
+	haml :colorchoice
+end
+
 
 get '/thanks' do
 	haml :thanks
@@ -22,9 +29,30 @@ get '/rivadeneira' do
  	erb :submissions
 end	
 
-post '/submit' do
+get '/rivadeneiracolors' do
 
-	puts "HEYYYYYYYY", params["community-url"]
+	@colors = Color.all
+ 	erb :colorsubmissions
+end	
+
+post '/submitcolor' do
+
+	@colorselection = Color.new(coloraccent1: params["color-accent1"],
+				coloraccent2: params["color-accent2"],
+				colorhighlight: params["color-highlight"],
+				communityurl: params["community-url"]
+				)
+	@colorselection.save
+
+	redirect '/thankscolors'
+end
+
+get '/thankscolors' do
+ 	haml :thankscolors
+end
+
+
+post '/submit' do
 
 	@selection = Selection.new(communityurl: params["community-url"],
 		coloraccent1: params["color-accent1"],
