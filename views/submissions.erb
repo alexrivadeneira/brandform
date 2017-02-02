@@ -37,6 +37,7 @@
 
 <header>
 
+
 <!-- START menu area -->
 
 <nav class="navbar navbar-default navbar-sub-hero">
@@ -60,8 +61,9 @@
          <!--  <img class="cl-banner-img"  src="/community-library/accounts/91/916148/NIH-logo.jpg" alt="community logo"/>
     -->
 
-        <li><a href="#"><strong>Welcome <span class="sr-only">(current)</strong></span></a></li>
-        <li><a href="/a/home">Ideas</a></li>
+        <li><a href="#"><strong>WELCOME<span class="sr-only">(current)</strong></span></a></li>
+        <li><a href="/a/home">HOME</a></li>
+        <li><a href="/a/ideas/recent">IDEAS</a></li>
         <!--<li class="dropdown">
           <a href="#" class="7" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -97,21 +99,28 @@
       -->
 
 
-      <form class="navbar-form navbar-right" role="search" action="/a/ideas/search" method="GET" data-features="placeholder-text">
-      <input type="hidden" name="templateId" value="0"/>
-        <div class="form-group">
-          <input  class="form-control with-placeholder-text cl-search-box" type="text" name="query" accesskey="s" tabindex="0" title="Enter Search Term" data-placeholder-text="Search Ideas" placeholder="Search Ideas">
-        </div>
-        <button type="submit" class="btn btn-default cl-search-btn"><span class="glyphicon glyphicon-search"></span></button>
+<div class="cl-search">
+<nav class=" navbar-form navbar-right">
+  <form role="search" action="/a/ideas/search" method="GET" data-features="placeholder-text search-box">
+    <div class="input-group">
+      <span class="input-group-btn">
+        <input type="hidden" name="templateId" value="0"/>
+        <button type="submit" class="btn btn-sm btn-primary">
+          <span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+      </span>
+      <input class="form-control input-sm with-placeholder-text search-control" type="text" name="query" accesskey="s" tabindex="0" title="Enter Search Term" data-placeholder-text="Search Ideas" placeholder="Search Ideas">
+    </div>
+          <div class="text-right search-help-block" style="display: none">or <a href="/a/ideas/search">jump to advanced search</a></div>
       </form>
-
+</nav>
+</div>
     </div><!-- /.navbar-collapse -->
 
 </nav>
 
 
-<!-- END menu area -->
 
+<!-- END menu area -->
 
 <% if selection.herocarousel %>
 
@@ -138,7 +147,7 @@
 
 
 
-        <div class="item active carousel-item-1 landing-pg-bg-accent-1">
+        <div class="item active carousel-item-1">
           <div class="carousel-caption">
             <h1><%= selection.heroslide1headerline %></h1>
             <p><%= selection.heroslide1textparagraph %></p>
@@ -160,7 +169,7 @@
 
 
       <% if selection.heroslide2bgurl != "" %>
-          <div class="item carousel-item-2 landing-pg-bg-accent-1">
+          <div class="item carousel-item-2">
             <div class="carousel-caption">
               <h1><%= selection.heroslide2headerline %></h1>
               <p><%= selection.heroslide2textparagraph %></p>
@@ -181,7 +190,7 @@
 
 
       <% if selection.heroslide3bgurl != "" %>
-          <div class="item carousel-item-3 landing-pg-bg-accent-1">
+          <div class="item carousel-item-3">
             <div class="carousel-caption">
               <h1><%= selection.heroslide3headerline %></h1>
               <p><%= selection.heroslide3textparagraph %></p>
