@@ -382,13 +382,12 @@
 
 
 <% if selection.calloutideas %>
-  <!-- START popular ideas callout style -->
+<!-- START popular ideas callout style -->
   <section class="cl-ideas cl-ideas-callout landing-pg-bg-accent-1 cl-white-fg">
  
       <div class="row cl-row">
         <h2 >Popular Ideas </h2>
 
-      <p class="text-center">The most popular ideas</p>
       <hr class="white" />
 
 
@@ -399,8 +398,8 @@
             <div class="cl-idea-box cl-ideas-callout-style #if($ideaCount % 2 == 0) cl-ideas-callout-extra-margin #end">
               <h3><a href="$idea.getUrl()" class="landing-pg-fg-highlight">$textHelper.abbreviate($idea.getTitle(), 35)</a></h3>
               #set($author = $idea.getAuthor())
-              $apiHelper.htmlEncode($author.getName())
-              <p>$textHelper.abbreviate($apiHelper.removeHtml($idea.getDescription()), 120))</p>
+              <span class="landing-pg-fg-accent-1">$apiHelper.htmlEncode($author.getName())</span>
+              <p>$textHelper.abbreviate($apiHelper.removeHtml($idea.getDescription()), 120)</p>
               <span class="landing-pg-fg-accent-1 #if($ideaCount % 2 == 0) cl-idea-stats-callout-reverse #else cl-idea-stats-callout #end">
                 <span class="is-icon is-icon-arrow-up" aria-hidden="true"></span>
                 <span class="sr-only">Net Votes:</span> $idea.getNetVotes()
