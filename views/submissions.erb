@@ -262,6 +262,8 @@
 
 
 <% if selection.activecampaigns %>
+
+
   <!-- START active campaigns -->
   #set($campaignCount = 0)
   #foreach($campaign in $api.getActiveCampaigns())
@@ -274,7 +276,7 @@
       <div class="row cl-row">
         <h2>Active Campaigns</h2>
 
-          <p class="text-center">Browse our Active Campaigns</p>
+          <p class="text-center">Browse ongoing initiatives</p>
           <hr class="dark"/>
 
 
@@ -284,7 +286,7 @@
               <div
 
               #if($campaign.getLogo())
-                style="background: url('$campaign.getLogo()') !important; background-size: cover;"
+                style="background: url('$campaign.getLogo()') !important; background-size: cover !important;"
               #end
 
                class="cl-campaign-logo-box landing-pg-bg-accent-1"
@@ -314,6 +316,7 @@
     </section>
     #end
   <!-- END active campaigns -->
+
 <% end %>
 
 
