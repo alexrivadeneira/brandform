@@ -382,7 +382,7 @@
 
 
 <% if selection.calloutideas %>
-<!-- START popular ideas callout style -->
+  <!-- START popular ideas callout style -->
   <section class="cl-ideas cl-ideas-callout landing-pg-bg-accent-1 cl-white-fg">
  
       <div class="row cl-row">
@@ -421,13 +421,12 @@
 
 
 <% if selection.tags %>
+
 <section class="cl-tags">
 
       <div class="row cl-row">
         <div class="col-md-8 col-md-offset-2">
-              <h2>What We're Discussing</h2>
-              <p class="text-center">Word cloud of most frequently used words</p>
-              <hr class="dark"/>
+              <h2>Popular Topics</h2>
               
           <p>#set($tags = $api.getTagsForTagCloud())
           #foreach($tag in $tags)
@@ -438,6 +437,7 @@
     </div><!-- row cl-row -->
 
 </section>
+
 <% end %>
 
 
@@ -448,17 +448,13 @@
     <div class="container">
       <div class="row cl-row ">
         <div class="col-md-8 col-md-offset-2">
-          <h2>Where Good Ideas Come From</h2>
-          <p class="text-center">Get some inspiration from this video.</p>
-  
-        <h2 class="sr-only">WHERE GOOD IDEAS COME FROM</h2>
 
         <!-- small screen icon -->
-        <a href="<%= selection.videourl %>" rel="nofollow"><span class="glyphicon glyphicon-play-circle" aria-hidden="true"></span></a>
-        <h2><a class="cl-play-video-text" href="<%= selection.videourl %>" rel="nofollow">Play Innovation Video</a></h2>
+        <a href="https://www.youtube.com/watch?v=oSWEd4o-BdE" rel="nofollow"><span class="glyphicon glyphicon-play-circle" aria-hidden="true"></span></a>
+      <a class="cl-play-video-text" href="https://www.youtube.com/watch?v=NugRZGDbPFU" rel="nofollow"><h2 class="cl-video-sm-link">Play Innovation Video</h2></a>
 
         <!-- large screen iframe video -->
-        <iframe class="landing-pg-bc-accent-1" width="100%" height="354" src="<%= selection.videourl %>" allowfullscreen ></iframe>
+        <iframe class="landing-pg-bc-accent-1" width="100%" height="354" src="https://www.youtube.com/embed/NugRZGDbPFU?wmode=transparent" allowfullscreen="true"></iframe>
         
       </div><!-- col-md-8 -->
      </div><!-- row cl-row -->
@@ -486,7 +482,7 @@
       <div class="row cl-row">
 
 
-        <div class="col-md-3 col-sm-6">
+        <div class="col-lg-3 col-md-12">
           <h4><%= selection.footercol1header %></h4>
           <ul>
             <li><a href="<%= selection.footercol1item1url %>"><%= selection.footercol1item1title %></a></li>
@@ -496,7 +492,7 @@
             <li><a href="<%= selection.footercol1item5url %>"><%= selection.footercol1item5title %></a></li>
           </ul>              
         </div>
-        <div class="col-md-3 col-sm-6">
+        <div class="col-lg-3 col-md-12">
           <h4><%= selection.footercol2item1title %></h4>
           <ul>
             <li><a href="<%= selection.footercol2item1url %>"><%= selection.footercol2item1title %></a></li>
@@ -506,7 +502,7 @@
             <li><a href="<%= selection.footercol2item5url %>"><%= selection.footercol2item5title %></a></li>
           </ul>              
         </div>
-        <div class="col-md-3 col-sm-6">
+        <div class="col-lg-3 col-md-12">
           <h4><%= selection.footercol3header %></h4>
           <ul>
             <li><a href="<%= selection.footercol3item1url %>"><%= selection.footercol3item1title %></a></li>
@@ -516,7 +512,7 @@
             <li><a href="<%= selection.footercol3item5url %>"><%= selection.footercol3item5title %></a></li>
           </ul>              
         </div>
-        <div class="col-md-3 col-sm-6">
+        <div class="col-lg-3 col-md-12">
           <h4><%= selection.footercol4header %></h4>
           <ul>
             <li><a href="<%= selection.footercol4item1url %>"><%= selection.footercol4item1title %></a></li>
@@ -545,7 +541,7 @@
 
 
 
-COMMUNITY URL: <%= selection.communityurl %>
+COMMUNITY URL: <%= selection.communityurl %> <br/>
 
 
 Accent 1: #<%= selection.coloraccent1 %> <br />
