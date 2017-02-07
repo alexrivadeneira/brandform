@@ -29,6 +29,11 @@ get '/rivadeneira' do
  	erb :submissions
 end	
 
+get '/rivadeneirad' do
+	@selections = Selection.all
+	erb :rivadeneirad
+end
+
 get '/rivadeneiracolors' do
 
 	@colors = Color.all
