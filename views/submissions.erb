@@ -406,6 +406,8 @@
 
 
 <% if selection.pinnedideas %>
+
+
   <!-- START pinned ideas -->
   #set($ideaCount = 0)
   #foreach($idea in $api.getPinnedIdeas(4))
@@ -418,10 +420,32 @@
 
             <div class="row cl-row">
               <h2>Pinned Ideas</h2>
-              <p class="text-center ">With your knowledge and participation, we are hoping to bring our service to the next level.</p>
+              <p class="text-center ">Ideas worth noticing</p>
               <hr class="dark"/>
               
 
+    #if($ideaCount < 3)
+              <div class="col-md-3">
+              </div>
+              #foreach($idea in $api.getPinnedIdeas(4))
+                <div class=" col-md-3 col-sm-6">
+                  <div class="cl-idea-box #if($ideaCount % 2 == 0) cl-pin-rotate1 #else cl-pin-rotate2 #end">
+                    <span class="glyphicon glyphicon-pushpin cl-idea-center-pin landing-pg-fg-accent-1"></span>
+                    <h3><a href="$idea.getUrl()" class="landing-pg-fg-highlight">$textHelper.abbreviate($idea.getTitle(), 35)</a></h3>
+                    #set($author = $idea.getAuthor())
+                    <span class="cl-idea-author">$apiHelper.htmlEncode($author.getName())</span>
+                    <p>$textHelper.abbreviate($idea.getDescription(), 150)</p>
+                    <span class="cl-idea-stats landing-pg-fg-accent-1">
+                      <span class="is-icon is-icon-arrow-up cl-text-contrast" aria-hidden="true"></span>
+                      <span class="sr-only">Net Votes:</span> $idea.getNetVotes() &nbsp;
+                      <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
+                      <span class="sr-only">Number of Comments:</span> $idea.getCommentCount()
+                    </span><!-- cl-idea-stats -->
+                    </div>
+                </div>        
+                #set($ideaCount = $ideaCount + 1)
+            #end
+    #else
               #foreach($idea in $api.getPinnedIdeas(4))
                 <div class="col-md-3 col-sm-6">
                   <div class="cl-idea-box #if($ideaCount % 2 == 0) cl-pin-rotate1 #else cl-pin-rotate2 #end">
@@ -440,6 +464,7 @@
                 </div>        
                 #set($ideaCount = $ideaCount + 1)
             #end
+      #end
         </section>
       #end
   <!-- END pinned ideas -->
@@ -636,16 +661,21 @@ Accent 2: #<%= selection.coloraccent2 %> <br />
 Highlight: #<%= selection.colorhighlight %> <br />
 
 .carousel-inner > .carousel-item-1{
-  background: url("<%= selection.heroslide1bgurl%>");
+  background: url("<%= selection.heroslide1bgurl%>") !important;
+  background-size: cover;
 }
 
 
 .carousel-inner > .carousel-item-2{
-  background: url("<%= selection.heroslide2bgurl%>");
+  background: url("<%= selection.heroslide2bgurl%>") !important;
+  background-size: cover;
+
 }
 
 .carousel-inner > .carousel-item-3{
-  background: url("<%= selection.heroslide3bgurl%>");
+  background: url("<%= selection.heroslide3bgurl%>") !important;
+  background-size: cover;
+  
 }
 
 <%if selection.divbgimg %>
