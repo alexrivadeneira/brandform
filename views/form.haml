@@ -358,12 +358,28 @@
 		.row
 			.col-md-3	
 				.form-check
-					%input.form-check-input{:type => "checkbox", :name => "callout-ideas"}
+					%input.form-check-input{:type => "checkbox", :name => "callout-ideas", :onclick => "toggleView('callout-ideas')"}
 					%label.form-check-label Callout Ideas
 
 			.col-md-9
 				%img.img-responsive{:src => "images/new_bg_popular-ideas.png", :style => "max-height: 150px;"}
 				%p Another fun way to display ideas and increase engagement and highlight active users. Title limited to 35 characters (including spaces), and description to 120 characters (including spaces).
+
+
+	.container
+		.col-md-6#callout-ideas
+			.form-group
+
+				%label (Optional) Watermark layer background - 1300 x 700px
+				%p Add an optional background image that will be covered with 80% opacity layer consisting of your accent color choice.
+				%p If you leave this area blank, your accent color choice will be used as a background color by default.
+
+				%label Upload the image to your global file library, and copy the url here (see image below).			
+				%input.form-control{:type => "text", :name => "div-bg-img"}
+				%small.form-text.text-muted Consider a 1300 x 700 pixel image that is not so busy or bright that it will distract from the popular ideas in the foreground.
+				%img.img-responsive{:src => "images/upload-img-url.png"}		
+
+
 
 	.form-group
 		.row

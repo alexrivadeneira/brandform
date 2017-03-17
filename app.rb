@@ -142,7 +142,8 @@ post '/submit' do
 		footercol4item4url: params["footer-col4-item4-url"],
 		footercol4item5title: params["footer-col4-item5-title"],
 		footercol4item5url: params["footer-col4-item5-url"],
-		horizontalcampaigns: params["horiztonal-active-campaigns"]
+		horizontalcampaigns: params["horiztonal-active-campaigns"],
+		divbgimg: params["div-bg-img"]
 
 		)
 

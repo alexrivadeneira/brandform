@@ -451,14 +451,32 @@
 
 
 <% if selection.calloutideas %>
+
+
   <!-- START popular ideas callout style -->
-  <section class="cl-ideas cl-ideas-callout landing-pg-bg-accent-1 cl-white-fg">
+  <section class="cl-ideas cl-ideas-callout cl-white-fg
+
+  <% if selection.divbgimg %>
+
+  cl-fade-bg
  
+ <% end %>
+
+ ">
+
+ <% if selection.divbgimg %>
+  <div class="landing-pg-bg-accent-1 cl-trans-overlay">
+  </div>
+ <% end %>
+
       <div class="row cl-row">
-        <h2 >Popular Ideas </h2>
 
-      <hr class="white" />
-
+        <div class="row">
+          <div class="col-md-12">
+              <h2>Popular Ideas </h2>
+              <hr class="white" />
+            </div>
+        </div>
 
         #set($ideaCount = 0)
         #foreach($idea in $api.getIdeasByMode("top", 4))
@@ -485,6 +503,8 @@
 
   </section>
   <!-- END popular ideas callout style -->
+
+
 <% end %>
 
 
@@ -627,6 +647,14 @@ Highlight: #<%= selection.colorhighlight %> <br />
 .carousel-inner > .carousel-item-3{
   background: url("<%= selection.heroslide3bgurl%>");
 }
+
+<%if selection.divbgimg %>
+
+.cl-fade-bg{
+  background: url("<%= selection.divbgimg%>");
+}
+
+<% end %>
 
 </textarea>
 
