@@ -148,8 +148,8 @@ post '/submit' do
 
 	@selection.save
 
-	@model = Model.new(name: params)
-	@model.save
+	# @model = Model.new(name: params)
+	# @model.save
 
 	redirect '/thanks'
 
