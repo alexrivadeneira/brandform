@@ -1,4 +1,4 @@
-class CreateSelection < ActiveRecord::Migration
+class CreateSelection < ActiveRecord::Migration[5.0]
   def up
   	create_table :selections do |t|
 		t.string :communityurl

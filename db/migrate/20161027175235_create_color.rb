@@ -1,4 +1,4 @@
-class CreateColor < ActiveRecord::Migration
+class CreateColor < ActiveRecord::Migration[5.0]
   def up
   	create_table :colors do |t|
   		t.string :communityurl

@@ -1,4 +1,4 @@
-class CreateModel < ActiveRecord::Migration
+class CreateModel < ActiveRecord::Migration[5.0]
   def up
   	create_table :models do |t|
   		t.string :name

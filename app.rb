@@ -26,6 +26,7 @@ get '/rivadeneira' do
 
 	@models = Model.all
 	@selections = Selection.all
+	
  	erb :submissions
 end	
 
@@ -140,7 +141,9 @@ post '/submit' do
 		footercol4item4title: params["footer-col4-item4-title"],
 		footercol4item4url: params["footer-col4-item4-url"],
 		footercol4item5title: params["footer-col4-item5-title"],
-		footercol4item5url: params["footer-col4-item5-url"]
+		footercol4item5url: params["footer-col4-item5-url"],
+		horizontalcampaigns: params["horiztonal-active-campaigns"]
+
 		)
 
 	@selection.save

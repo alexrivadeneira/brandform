@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161027175235) do
+ActiveRecord::Schema.define(version: 20170316212404) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -109,6 +109,20 @@ ActiveRecord::Schema.define(version: 20161027175235) do
     t.string  "footercol4item4url"
     t.string  "footercol4item5title"
     t.string  "footercol4item5url"
+    t.string  "headerlink1text"
+    t.string  "headerlink1url"
+    t.string  "headerlink2text"
+    t.string  "headerlink2url"
+    t.string  "headerlink3text"
+    t.string  "headerlink3url"
+    t.string  "headerlink4text"
+    t.string  "headerlink4url"
+    t.string  "headerlink5text"
+    t.string  "headerlink5url"
+    t.string  "headerlink6text"
+    t.string  "headerlink6url"
+    t.string  "divbgimg"
+    t.string  "horizontalcampaigns"
   end
 
 end

@@ -307,6 +307,18 @@
 		.row
 			.col-md-3
 				.form-check
+					%input.form-check-input{:type => "checkbox", :name => "horiztonal-active-campaigns"}
+					%label.form-check-label  Active Campaigns (Alternate Horizontal Layout)
+			.col-md-9
+				%img.img-responsive{:src => "images/horz-camp.png", :style => "max-width: 250px;"}			
+				%p Alternate take on the active campaign widget.  Campaigns appear in a row with campaign image to the left. 
+
+
+	.form-group
+
+		.row
+			.col-md-3
+				.form-check
 					%input.form-check-input{:type => "checkbox", :name => "general-text", :onclick => "toggleView('general-text')"}
 					%label.form-check-label General Text Area
 			.col-md-9

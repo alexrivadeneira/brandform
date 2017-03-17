@@ -5,6 +5,10 @@
 <head>
 	<title></title>
 
+
+
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin= "anonymous">
+
 	<style>
 	.greybg{
 		background: yellow;
@@ -14,8 +18,24 @@
 <body>
 
 
+<div class="container">
 
 <h1>Selections</h1>
+<% @selectionCountInit = 0 %>
+
+<% @selections.each do |selection| %>
+
+
+
+<ul>
+<li><a href="#<%= @selectionCountInit%>"><%= selection.communityurl %></a></li>
+
+
+<% @selectionCountInit += 1 %>
+
+</ul>
+<% end %>
+
 
 
 
@@ -24,11 +44,15 @@
 
 <% @selections.each do |selection| %>
 
+
+<h3 id="<%= @selectionCount %>"><%= selection.communityurl %></h3>
+
+
 	<div class='<% if @selectionCount % 2 == 0 %>greybg<% end %> container'>
 
 
-
-
+<h4 >Custom Landing Page HTML</h4>
+<textarea style="width: 100%; height: 300px;">
 
 
 #set($api = $r.getAPI())
@@ -321,6 +345,48 @@
 
 
 
+<% if selection.horizontalcampaigns %> 
+
+  <!-- START horizontal active campaigns -->
+  #set($campaignCount = 0)
+  #foreach($campaign in $api.getActiveCampaigns())
+    #set($campaignCount = $campaignCount +1)
+  #end
+
+  #if($campaignCount > 0)
+  <section class="cl-section cl-campaigns cl-campaigns-horizontal">
+
+      <div class="row cl-row">
+        <h2>Active Campaigns</h2>
+
+          <p class="text-center">Browse ongoing initiatives</p>
+          <hr class="dark"/>
+
+          #foreach($campaign in $api.getActiveCampaigns())
+            
+    
+    <div class="container">
+    <div class="row">
+              <div class="col-md-3">
+                <a href="$campaign.getUrl()"><img src="$campaign.getLogo()" alt="campaign logo" class="img-responsive"/></a>
+              </div>
+              <div class="col-md-9">
+               <a href="$campaign.getUrl()"> <h3 class="cl-campaign-horz-name landing-pg-fg-highlight">$campaign.getName()</h3></a>
+               #if($campaign.getGroup()) <span class="landing-pg-fg-accent-2"> $api.getCampaignGroupById($campaign.getGroupId()).getName() </span>#end
+                #if($campaign.getDescription())<p class="cl-campaign-horz-description">$campaign.getDescription()</p>#end
+              </div>
+    </div>
+    </div>
+       
+          #end
+        </div><!-- row -->
+    </section>
+    #end
+  <!-- END active campaigns -->
+
+<% end %>
+
+
 <% if selection.generaltext %>
   <!-- START general text area -->
   <section class="cl-section">
@@ -480,8 +546,6 @@
   <section class="cl-section ">
 
 
-
-
       <div class="row cl-row">
 
 
@@ -540,11 +604,11 @@
 <% end %>
 
 
+</textarea>
 
 
-
-
-COMMUNITY URL: <%= selection.communityurl %> <br/>
+<h4>Custom CSS Overrides</h4>
+<textarea style="width: 100%; height: 300px;">
 
 
 Accent 1: #<%= selection.coloraccent1 %> <br />
@@ -564,17 +628,15 @@ Highlight: #<%= selection.colorhighlight %> <br />
   background: url("<%= selection.heroslide3bgurl%>");
 }
 
+</textarea>
+
 
 	</div>
 
 
-<!-- ___________           .___         _____  .____                       .___.__                 __________                        
-\_   _____/ ____    __| _/   _____/ ____\ |    |   _____    ____    __| _/|__| ____    ____   \______   \_____     ____   ____  
- |    __)_ /    \  / __ |   /  _ \   __\  |    |   \__  \  /    \  / __ | |  |/    \  / ___\   |     ___/\__  \   / ___\_/ __ \ 
- |        \   |  \/ /_/ |  (  <_> )  |    |    |___ / __ \|   |  \/ /_/ | |  |   |  \/ /_/  >  |    |     / __ \_/ /_/  >  ___/ 
-/_______  /___|  /\____ |   \____/|__|    |_______ (____  /___|  /\____ | |__|___|  /\___  /   |____|    (____  /\___  / \___  >
-        \/     \/      \/                         \/    \/     \/      \/         \//_____/                   \//_____/      \/ 
- -->
+
+
+
 	<hr />
 
 <% @selectionCount += 1 %>
@@ -583,9 +645,10 @@ Highlight: #<%= selection.colorhighlight %> <br />
 
 
 
-
 </body>
 </html>
+
+</section>
 
 
 
