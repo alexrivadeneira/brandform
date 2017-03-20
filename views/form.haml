@@ -60,8 +60,101 @@
 		.col-md-6
 
 			<a href="https://ideascale.com/branding-guidelines#guide-colors" target="_blank"><img class="img-responsive" src="images/color-choice.png" alt="color-choice" /></a>
+
+
+	%h3 Header Navigation Links
+
+	.form-group
+		.row
+			.col-md-3
+				.form-check
+					%input.form-check-input{:type => "checkbox", :name => "footer", :onclick => "toggleView('header-links')"}
+					%label.form-check-label (Optional) Customize Header Links
+			.col-md-9
+				%img.img-responsive{:src => "images/header-links.png", :style => "max-width: 350px;"}
+				%p Customize the header links on the landing page and in the inner community
+				%p If you leave this section blank, we will populate the header with the default links:  Welcome ("welcome" landing page), Home (main community page), Ideas (recently submitted ideas). 
+
+
+
+
+	.container#header-links
+		%h3 Create up to five links for the navigation header:
+
+		.col-md-4
+
+
+			.form-group
+			%label Header link 1 text
+			%input.form-control{:type => "text", :name => "headerlink1text"}
+			%small.form-text.text-muted Text for your link
+
+			.form-group
+			%label Header link 1 url
+			%input.form-control{:type => "text", :name => "headerlink1url"}
+			%small.form-text.text-muted http (url) destination of your link
+
+			%br
+			%br
+
+
+
+			.form-group
+			%label Header link 2 text
+			%input.form-control{:type => "text", :name => "headerlink2text"}
+			%small.form-text.text-muted Text for your link
+
+			.form-group
+			%label Header link 2 url
+			%input.form-control{:type => "text", :name => "headerlink2url"}
+			%small.form-text.text-muted http (url) destination of your link
+
+			%br
+			%br
 				
-			
+
+			.form-group
+			%label Header link 3 text
+			%input.form-control{:type => "text", :name => "headerlink3text"}
+			%small.form-text.text-muted Text for your link
+
+			.form-group
+			%label Header link 3 url
+			%input.form-control{:type => "text", :name => "headerlink3url"}
+			%small.form-text.text-muted http (url) destination of your link
+
+			%br
+			%br			
+
+
+			.form-group
+			%label Header link 4 text
+			%input.form-control{:type => "text", :name => "headerlink4text"}
+			%small.form-text.text-muted Text for your link
+
+			.form-group
+			%label Header link 4 url
+			%input.form-control{:type => "text", :name => "headerlink4url"}
+			%small.form-text.text-muted http (url) destination of your link
+
+			%br
+			%br		
+
+
+
+			.form-group
+			%label Header link 5 text
+			%input.form-control{:type => "text", :name => "headerlink5text"}
+			%small.form-text.text-muted Text for your link
+
+			.form-group
+			%label Header link 5 url
+			%input.form-control{:type => "text", :name => "headerlink5url"}
+			%small.form-text.text-muted http (url) destination of your link
+
+			%br
+			%br		
+
 
 	%h3 Which landing page widgets do you want?
 	.form-group
@@ -276,7 +369,7 @@
 					%label.form-check-label Welcome Area	
 
 				.col-md-9
-					%img.img-responsive{:src => "images/welcome-area.png", :style => "max-height: 110px;"}
+					%img.img-responsive{:src => "images/welcome-area.png", :style => "max-width: 350px;"}
 					%p Greet your users with this widget which displays the logged in username.
 					%p You can customize the line of text under the username.
 
@@ -390,7 +483,7 @@
 					%input.form-check-input{:type => "checkbox", :name => "tags"}
 					%label.form-check-label Tags
 			.col-md-9
-				%img.img-responsive{:src => "images/new_bg_tags.png", :style => "max-width: 500px;"}
+				%img.img-responsive{:src => "images/new_bg_tags.png", :style => "max-width: 350px;"}
 				%p The popular topics or tags widget uses a algorithm to create a word cloud of the most popular tags in your community. The boldest/largest/darkest words are the highest frequency tags, and the smallest/lightest words appear with least frequency. Clicking on a tag loads search results for for that tag on ideas in your community.
 
 

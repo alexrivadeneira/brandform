@@ -1,8 +1,14 @@
 
-#hero-slide1, #hero-slide2, #hero-slide3, #hero-slide4, #hero-slide5, #welcome-area, #general-text, #video, #footer, #callout-ideas{
+#hero-slide1, #hero-slide2, #hero-slide3, #hero-slide4, #hero-slide5, #welcome-area, #general-text, #video, #footer, #callout-ideas, #header-links{
 	display: none;
 }
 
 .greybg{
 	background: yellow;
+}
+
+.container img{
+	border: 2px solid #d8d8d8;
+	padding: 7px
+	margin: 15px;
 }
