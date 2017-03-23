@@ -13,10 +13,6 @@ get '/' do
 	haml :form
 end
 
-get '/colorchoice' do
-	haml :colorchoice
-end
-
 
 get '/thanks' do
 	haml :thanks
@@ -35,27 +31,6 @@ get '/rivadeneirad' do
 	erb :rivadeneirad
 end
 
-get '/rivadeneiracolors' do
-
-	@colors = Color.all
- 	erb :colorsubmissions
-end	
-
-post '/submitcolor' do
-
-	@colorselection = Color.new(coloraccent1: params["color-accent1"],
-				coloraccent2: params["color-accent2"],
-				colorhighlight: params["color-highlight"],
-				communityurl: params["community-url"]
-				)
-	@colorselection.save
-
-	redirect '/thankscolors'
-end
-
-get '/thankscolors' do
- 	haml :thankscolors
-end
 
 
 post '/submit' do

@@ -5,15 +5,8 @@
 <head>
 	<title></title>
 
-
-
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin= "anonymous">
 
-	<style>
-	.greybg{
-		background: yellow;
-	}
-	</style>
 </head>
 <body>
 
@@ -48,10 +41,13 @@
 <h3 id="<%= @selectionCount %>"><%= selection.communityurl %></h3>
 
 
-	<div class='<% if @selectionCount % 2 == 0 %>greybg<% end %> container'>
+	<div class='<% if @selectionCount % 2 == 0 %>well<% end %> container'>
 
 
-<h4 >Custom Landing Page HTML</h4>
+
+
+
+<h4 >Custom Landing Page</h4>
 <textarea style="width: 100%; height: 300px;">
 
 
@@ -663,13 +659,24 @@
 </textarea>
 
 
-<h4>Custom CSS Overrides</h4>
+
+
+<h4>Community Colors</h4>
+
+<textarea style="width: 100%; height: 130px;">
+
+Highlight: <%= selection.colorhighlight %> 
+Accent 1: <%= selection.coloraccent1 %> 
+Accent 2: <%= selection.coloraccent2 %> 
+
+</textarea>
+
+
+
+
+<h4>Theme for Landing Page and Custom Pages</h4>
 <textarea style="width: 100%; height: 300px;">
 
-
-Accent 1: #<%= selection.coloraccent1 %> <br />
-Accent 2: #<%= selection.coloraccent2 %> <br />
-Highlight: #<%= selection.colorhighlight %> <br />
 
 .carousel-inner > .carousel-item-1{
   background: url("<%= selection.heroslide1bgurl%>") !important;
