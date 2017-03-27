@@ -13,7 +13,7 @@
 
 <div class="container">
 
-<h1>Selections</h1>
+<h1>Community Custom Branding Code</h1>
 <% @selectionCountInit = 0 %>
 
 <% @selections.each do |selection| %>
@@ -778,18 +778,116 @@
 
 </textarea>
 
+<br/><br/>
+
+<% if selection.animated %>
+  <div class="alert alert-warning">
+  <h4><span class="glyphicon glyphicon-alert"></span> Additional Requirements for Refreshing Ideas Widget</h4>
+
+  <p>It looks like you've added the dynamic ideas widget to your landing page.  In addition to the code generated here, you'll need to follow some additional instructions to set it up.
+
+  <ul>
+    <li>Create a new custom page under Site HTML Pages</li>
+    <li>Set <strong>Page Title</strong> and <strong>Friendly URL</strong> to <strong>idea-frag-odd</strong></li>
+    <li><strong>Link Appears in Footer</strong> should be OFF</li>
+    <li><strong>Allow Full Control (no layout) should be ON</strong>
+    <li>Paste in the following code:</li>
+    <textarea style="width: 100%; height: 200px;">
+
+#set($api = $r.getAPI())
+#set($apiHelper = $api.getHelper())
+
+#set($ideas = $api.getIdeasByMode("random", 1))
+
+#foreach($idea in $ideas)
+          <div class="col-md-3 col-sm-6">
+            <div class="cl-idea-box cl-ideas-callout-style #if($ideaCount % 2 == 0) cl-ideas-callout-extra-margin #end">
+              <h3><a href="$idea.getUrl()" class="landing-pg-fg-highlight">$textHelper.abbreviate($idea.getTitle(), 35)</a></h3>
+              #set($author = $idea.getAuthor())
+              <span class="landing-pg-fg-accent-1">$apiHelper.htmlEncode($author.getName())</span>
+              <p>$textHelper.abbreviate($apiHelper.removeHtml($idea.getDescription()), 120)</p>
+              <span class="landing-pg-fg-accent-1 #if($ideaCount % 2 == 0) cl-idea-stats-callout-reverse #else cl-idea-stats-callout #end">
+                <span class="is-icon is-icon-arrow-up" aria-hidden="true"></span>
+                <span class="sr-only">Net Votes:</span> $idea.getNetVotes()
+                <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
+                <span class="sr-only">Number of Comments:</span> $idea.getCommentCount()
+              </span><!-- cl-idea-stats-->
+            </div><!-- cl-idea-box-->
+            <img src="$idea.author.avatar" class="#if($ideaCount % 2 == 0) cl-ideas-callout-author-reverse #else cl-ideas-callout-author #end " alt="$idea.author"/>
+            <div class=" #if($ideaCount % 2 == 0) cl-ideas-callout-triangle-reverse #else cl-ideas-callout-triangle #end">
+          </div>
+        </div><!-- col-md-3 col-sm-6-->
+#end
+
+    </textarea>
+
+
+<br/></br>
+
+    <li>Create a second new custom page under Site HTML Pages</li>
+    <li>Set <strong>Page Title</strong> and <strong>Friendly URL</strong> to <strong>idea-frag-even</strong></li>
+    <li><strong>Link Appears in Footer</strong> should be OFF</li>
+    <li><strong>Allow Full Control (no layout) should be ON</strong>
+    <li>Paste in the following code:</li>
+    <textarea style="width: 100%; height: 200px;">
+
+
+#set($api = $r.getAPI())
+#set($apiHelper = $api.getHelper())
+
+#set($ideas = $api.getIdeasByMode("random", 1))
+
+#foreach($idea in $ideas)
+          <div class="col-md-3 col-sm-6">
+            <div class="cl-idea-box cl-ideas-callout-style cl-ideas-callout-extra-margin">
+              <h3><a href="$idea.getUrl()" class="landing-pg-fg-highlight">$textHelper.abbreviate($idea.getTitle(), 35)</a></h3>
+              #set($author = $idea.getAuthor())
+              <span class="landing-pg-fg-accent-1">$apiHelper.htmlEncode($author.getName())</span>
+              <p>$textHelper.abbreviate($apiHelper.removeHtml($idea.getDescription()), 120)</p>
+              <span class="landing-pg-fg-accent-1 cl-idea-stats-callout-reverse">
+                <span class="is-icon is-icon-arrow-up" aria-hidden="true"></span>
+                <span class="sr-only">Net Votes:</span> $idea.getNetVotes()
+                <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
+                <span class="sr-only">Number of Comments:</span> $idea.getCommentCount()
+              </span><!-- cl-idea-stats-->
+            </div><!-- cl-idea-box-->
+            <img src="$idea.author.avatar" class="cl-ideas-callout-author-reverse" alt="$idea.author"/>
+            <div class="cl-ideas-callout-triangle-reverse">
+          </div>
+        </div><!-- col-md-3 col-sm-6-->
+#end
+
+
+    </textarea>
+
+
+
+  </ul>
+  </div>
+<% end %>
+
 
 
 
 <h4>Community Colors</h4>
 
-<textarea style="width: 100%; height: 130px;">
-
-Highlight: <%= selection.colorhighlight %> 
-Accent 1: <%= selection.coloraccent1 %> 
-Accent 2: <%= selection.coloraccent2 %> 
-
+Highlight:  <textarea style="width: 100%; height: 25px;">
+<%= selection.colorhighlight %>
 </textarea>
+
+
+Accent 1: <textarea style="width: 100%; height: 25px;">
+<%= selection.coloraccent1 %>
+</textarea>
+
+Accent 2: <textarea style="width: 100%; height: 25px;">
+<%= selection.coloraccent2 %>  
+</textarea>
+
+
+
+
+<br/><br/>
 
 
 
