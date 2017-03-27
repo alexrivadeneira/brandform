@@ -448,6 +448,7 @@
 					%label.form-check-label Pinned Ideas
 				.col-md-9
 					%img.img-responsive{:src => "images/new_bg_pinned-ideas.png", :style => "max-width: 350px;"}
+					%p Essentially a bulletin board for ideas moderators want to showcase. Moderators select ideas they want to pin to the landing page for community members to notice.  The ideas will remain in this widget until a moderator unpins the idea. 
 
 	.form-group
 		.row
@@ -473,6 +474,33 @@
 				%input.form-control{:type => "text", :name => "div-bg-img"}
 				%small.form-text.text-muted Consider a 1300 x 700 pixel image that is not so busy or bright that it will distract from the popular ideas in the foreground.
 				%img.img-responsive{:src => "images/upload-img-url.png"}		
+
+
+	.form-group
+		.row
+			.col-md-3	
+				.form-check
+					%input.form-check-input{:type => "checkbox", :name => "animated", :onclick => "toggleView('animated')"}
+					%label.form-check-label Refreshing Ideas
+
+			.col-md-9
+				%img.img-responsive{:src => "images/animated-ideas.png", :style => "max-width: 350px;"}
+				%p This widget randomly selects four ideas to showcase from your community and periodically refreshes. 
+
+
+	.container
+		.col-md-6#animated-ideas
+			.form-group
+
+				%label (Optional) Watermark layer background - 1300 x 700px
+				%p Add an optional background image that will be covered with 80% opacity layer consisting of your accent color choice.
+				%p If you leave this area blank, your accent color choice will be used as a background color by default.
+
+				%label Upload the image to your global file library, and copy the url here (see image below).			
+				%input.form-control{:type => "text", :name => "animatedbg"}
+				%small.form-text.text-muted Consider a 1300 x 700 pixel image that is not so busy or bright that it will distract from the popular ideas in the foreground.
+				%img.img-responsive{:src => "images/upload-img-url.png"}		
+
 
 
 

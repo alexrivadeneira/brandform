@@ -128,7 +128,9 @@ post '/submit' do
 		headerlink4url: params["headerlink4url"],	
 		headerlink5text: params["headerlink5text"],
 		headerlink5url: params["headerlink5url"],						
-		divbgimg: params["div-bg-img"]
+		divbgimg: params["div-bg-img"],
+		animated: params["animated"],
+		animatedbg: params["animatedbg"]
 
 		)
 
