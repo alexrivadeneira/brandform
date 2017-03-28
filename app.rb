@@ -33,6 +33,13 @@ end
 
 
 
+get '/:id/edit' do
+	@selection = Selection.find(params[:id])
+
+	haml :edit
+end
+
+
 post '/submit' do
 
 	@selection = Selection.new(communityurl: params["community-url"],
