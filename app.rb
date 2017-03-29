@@ -18,7 +18,7 @@ get '/thanks' do
 	haml :thanks
 end	
 
-get '/rivadeneira' do
+get '/submissions' do
 
 	@models = Model.all
 	@selections = Selection.all
