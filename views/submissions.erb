@@ -901,7 +901,7 @@ Accent 2: <textarea style="width: 100%; height: 25px;">
 .cl-white-fg {
   color: #fff;
 }
-<%if selection.divbgimg %>
+<%if selection.divbgimg != "" %>
 
 .cl-fade-bg{
   background: url("<%= selection.animatedbg%>") !important;
@@ -910,7 +910,7 @@ Accent 2: <textarea style="width: 100%; height: 25px;">
 
 <% end %>
 
-<%if selection.animatedbg %>
+<%if selection.animatedbg != "" %>
 .cl-fade-bg-animated{
   background: url("<%= selection.animatedbg%>") !important;
   background-size: cover !important;  
@@ -1062,10 +1062,7 @@ body.custom-landing-body a:hover {
     display: none;
   }
 }
-nav.navbar-sub-hero .navbar-nav li:nth-child(1) {
-  font-weight: 600;
-  text-transform: none !important;
-}
+
 /* -------END navbar------- */
 /* -------carousel------ */
 
