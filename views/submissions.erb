@@ -295,10 +295,7 @@
 
 
   <!-- START active campaigns -->
-  #set($campaignCount = 0)
-  #foreach($campaign in $api.getActiveCampaigns())
-    #set($campaignCount = $campaignCount +1)
-  #end
+  #set($campaignCount = $api.getActiveCampaigns().size())
 
   #if($campaignCount > 0)
   <section class="cl-section cl-campaigns">
@@ -354,10 +351,7 @@
 <% if selection.horizontalcampaigns %> 
 
   <!-- START horizontal active campaigns -->
-  #set($campaignCount = 0)
-  #foreach($campaign in $api.getActiveCampaigns())
-    #set($campaignCount = $campaignCount +1)
-  #end
+  #set($campaignCount = $api.getActiveCampaigns().size())
 
   #if($campaignCount > 0)
   <section class="cl-section cl-campaigns cl-campaigns-horizontal">
@@ -415,10 +409,7 @@
 
 
   <!-- START pinned ideas -->
-  #set($ideaCount = 0)
-  #foreach($idea in $api.getPinnedIdeas(4))
-  #set($ideaCount = $ideaCount + 1)
-  #end
+  #set($ideaCount = $api.getPinnedIdeas(4).size())
 
   #if($ideaCount > 0)
         <section class="cl-ideas cl-ideas-pinned ">
